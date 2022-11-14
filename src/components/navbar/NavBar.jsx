@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "../navigation/Navigation";
 import { NavLink } from "react-router-dom";
-import "./NavBar.css"
+import "./NavBar.css";
 
 const NavBar = () => {
   return (
@@ -9,7 +9,7 @@ const NavBar = () => {
       <div className="narbar d-flex align-items-center justify-content-between">
         <div className="rd-navbar-brand">
           <NavLink className="brand d-none d-xl-block" to="/">
-            <img src={"./src/assets/img/logo.png"} alt="ss" />
+            <img src="./src/assets/img/logo.png" alt="ss" />
           </NavLink>
           <div>
             <i
