@@ -24,38 +24,32 @@ const routes = createRoutesFromElements(
       path="/"
       element={<Home />}
       // loader={Home.loader}
-      errorElement={<div>Có gì đó không ổn :(</div>}
     />
     <Route
       path="/about"
       element={<About />}
       // loader={Home.loader}
-      errorElement={<div>Có gì đó không ổn :(</div>}
     />
     <Route
       path="/contact"
       element={<Contact />}
       // loader={Home.loader}
-      errorElement={<div>Có gì đó không ổn :(</div>}
     />
     <Route
       path="/product"
       element={<Product />}
       // loader={Home.loader}
-      errorElement={<div>Có gì đó không ổn :(</div>}
     />
     <Route
       path="/blog"
       element={<Blog />}
       // loader={Home.loader}
-      errorElement={<div>Có gì đó không ổn :(</div>}
     />
 
     <Route
       path="/cart"
       element={<Cart />}
       // loader={Home.loader}
-      errorElement={<div>Có gì đó không ổn :(</div>}
     />
 
     <Route path="*" element={<div>Page Not Found</div>} />
