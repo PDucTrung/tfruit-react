@@ -1,0 +1,39 @@
+.heading-header a {
+  color: white;
+}
+
+.heading-header a:hover {
+  color: orange;
+}
+
+.heading-header select {
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.heading-header .address:hover,
+.heading-header .phone:hover {
+  color: #41a451;
+  cursor: pointer;
+}
+
+.heading-header {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 10px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.heading-header .icon {
+  font-size: 15px;
+  color: #41a451;
+}
+
+.i-per {
+  font-size: 25px;
+  color: #41a451;
+  cursor: pointer;
+}

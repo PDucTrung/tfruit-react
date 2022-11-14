@@ -15,6 +15,8 @@ import Product from "./pages/product/Product";
 import Blog from "./pages/blog/Blog";
 import Layout from "./components/layout/Layout";
 import Cart from "./pages/cart/Cart";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const routes = createRoutesFromElements(
   <Route element={<Layout />}>

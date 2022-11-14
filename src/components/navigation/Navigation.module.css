@@ -1,15 +1,66 @@
 .nav {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  width: max-content;
 }
 
 .link {
-    text-decoration: none;
-    color: black;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding: 30px 28px 25px;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: black;
+}
+.link:hover {
+  color: green;
+  text-decoration: none;
+}
+
+.link:before,
+.link:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  bottom: 0px;
+  background: green;
+  border-radius: 5px;
+}
+
+.link:before {
+  left: 0;
+}
+
+.link:hover:before {
+  background: green;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.link:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
 }
 
 .active {
-    text-decoration: green;
-    color: green;
+  color: green;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding: 30px 28px 25px;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  text-transform: uppercase;
 }

@@ -1,0 +1,46 @@
+.narbar{
+    height: max-content;
+}
+
+.i {
+  font-size: 25px;
+  color: black;
+}
+
+.i:hover {
+  color: #dc143c;
+}
+
+.number {
+  color: #dc143c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 7px 2px;
+  gap: 10px;
+  font-size: 12.5px;
+  position: absolute;
+  width: 15px;
+  height: 17px;
+  left: 22px;
+  top: 0px;
+  border: 1.5px solid #dc143c;
+  border-radius: 10px;
+}
+
+.phone,
+.address,
+.user,
+.select,
+.cart,
+.search {
+  cursor: pointer;
+}
+
+.phone:hover,
+.address:hover,
+.user:hover,
+.select:hover {
+  color: #dc143c;
+}

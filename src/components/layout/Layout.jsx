@@ -1,14 +1,15 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
-import Navigation from "../navigation/Navigation";
+
+import { Outlet } from "react-router-dom";
+import HeadingHeader from "../heading-header/HeadingHeader";
+import NavBar from "../navbar/NavBar";
 
 const Layout = () => {
   return (
     <div>
       <header>
-        <div>logo</div>
-        <Navigation></Navigation>
-        <NavLink to={"/cart"}>cart</NavLink>
+        <HeadingHeader></HeadingHeader>
+        <NavBar/>
       </header>
 
       <Outlet></Outlet>
