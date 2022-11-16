@@ -1,0 +1,187 @@
+.slider-home {
+  width: 100%;
+}
+
+.slider-home .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.slider-home .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.slider-home .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  filter: brightness(65%);
+}
+
+.slider-home .swiper-button-next,
+.slider-home .swiper-button-prev {
+  background-color: white;
+  border: 2px solid white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.slider-home .swiper-button-prev::after,
+.slider-home .swiper-button-next::after {
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.slider-home .swiper-button-next:hover,
+.slider-home .swiper-button-prev:hover {
+  background-color: orange;
+}
+
+.slider-home .swiper-button-next:hover::after,
+.slider-home .swiper-button-prev:hover::after {
+  color: white;
+}
+
+.slider-home .swiper-pagination .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+}
+
+.slider-home .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: orange;
+}
+
+.btn-slider .button {
+  width: 140px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-slider .button-2 {
+  color: #fff;
+  border: 3px solid orange;
+  background-image: -webkit-linear-gradient(30deg, orange 50%, transparent 50%);
+  background-image: linear-gradient(30deg, orange 50%, transparent 50%);
+  background-size: 500px;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+.btn-slider .button-2:hover {
+  background-position: 100%;
+  color: orange;
+}
+
+.slider-home .info h3 {
+  margin: 0px;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 48px;
+  text-align: center;
+  padding: 10px;
+}
+.slider-home .info {
+  color: #fff;
+}
+.slider-home .info h5 {
+  font-weight: 300;
+  padding: 10px 0 0;
+  margin-top: 16px;
+  text-transform: capitalize;
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-size: 16px;
+  text-align: center;
+}
+
+.text-gradient {
+  background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (min-width: 576px) {
+  .slider-home .info h3 {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .slider-home .info h5 {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .slider-home .info h3 {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .slider-home .info h5 {
+    font-size: 16px;
+    text-align: center;
+    width: 700px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .slider-home .info h3 {
+    font-size: 64px;
+    text-align: center;
+  }
+
+  .slider-home .info h5 {
+    font-size: 20px;
+    text-align: center;
+    width: 900px;
+  }
+
+  .slider-home .swiper-button-next,
+  .slider-home .swiper-button-prev {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .slider-home .info h3 {
+    font-size: 84px;
+    text-align: left;
+  }
+
+  .slider-home .info h5 {
+    font-size: 20px;
+    text-align: left;
+  }
+}

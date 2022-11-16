@@ -8,11 +8,11 @@
 }
 
 .i:hover {
-  color: #dc143c;
+  color: green;
 }
 
 .number {
-  color: #dc143c;
+  color: green;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,7 +25,7 @@
   height: 17px;
   left: 22px;
   top: 0px;
-  border: 1.5px solid #dc143c;
+  border: 1.5px solid green;
   border-radius: 10px;
 }
 
@@ -42,7 +42,7 @@
 .address:hover,
 .user:hover,
 .select:hover {
-  color: #dc143c;
+  color: green;
 }
 
 .rd-navbar-brand .icon {
@@ -68,4 +68,60 @@
   height: 100%;
   width: 50%;
   border-radius: 0;
+}
+
+.modal-header {
+  border-bottom: none !important;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search .search-box {
+  height: 50px;
+  background: #353535;
+  line-height: 20px;
+  padding: 5px;
+  border-radius: 50px;
+}
+.search .search-input {
+  background: #353535;
+  color: #fff;
+  outline: none;
+  border: none;
+  line-height: 40px;
+  width: 0px;
+  float: left;
+  font-size: 14px;
+  transition: 0.7s ease;
+  font-family: "Mali", cursive;
+}
+.search .search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: #353535;
+  padding: 12px;
+  border-radius: 50%;
+  float: right;
+  color: #ff5722;
+  transition: 0.4s ease;
+}
+.search .search-box:hover > .search-input {
+  width: 240px;
+  margin: 0px 8px;
+}
+.search .search-input:focus {
+  width: 240px;
+  margin: 0px 8px;
+}
+.search .search-box:hover > .search-btn {
+  background: #fff;
+}
+.search .search-input:focus + .search-btn {
+  background: #fff;
 }

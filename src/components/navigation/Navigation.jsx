@@ -27,16 +27,18 @@ const menu = [
 
 const Navigation = () => {
   return (
-    <nav className={styles.nav} id="nav-menu">
-      {menu.map((item) => (
-        <NavLink
-          key={item.path}
-          to={item.path}
-          children={item.label}
-          className={({ isActive }) => (isActive ? styles.active : styles.link)}
-        />
-      ))}
-    </nav>
+    <main>
+      <nav className={styles.nav} id="nav-menu">
+        {menu.map((item) => (
+          <NavLink
+            key={item.path}
+            to={item.path}
+            children={item.label}
+            className={({ isActive }) => (isActive ? styles.active : styles.link)}
+          />
+        ))}
+      </nav>
+    </main>
   );
 };
 

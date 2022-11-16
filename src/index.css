@@ -14,8 +14,7 @@ img {
 
 html,
 body {
-  overflow-x: hidden;
-  width: 100%;
+  max-width: 100%;
 }
 
 .font-poppins {
@@ -26,3 +25,9 @@ body {
   font-family: "Mali", cursive;
 }
 
+header {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  background-color: white;
+}

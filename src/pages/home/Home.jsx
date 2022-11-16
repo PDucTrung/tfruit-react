@@ -1,10 +1,14 @@
 import React from "react";
+import SliderHome from "../../components/slider-home/SliderHome";
 import "./Home.css";
 
 const Home = () => {
+  
   return (
     <main>
-      <h1>home</h1>
+      <section className="section-slider-home">
+        <SliderHome />
+      </section>
     </main>
   );
 };

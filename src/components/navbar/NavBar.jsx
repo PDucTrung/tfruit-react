@@ -1,59 +1,71 @@
 import React, { useState } from "react";
 import Navigation from "../navigation/Navigation";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import Modal from "react-bootstrap/Modal";
 
 const NavBar = () => {
-  const [show, setShow] = useState(false);
+  const [showmenu, setShowmenu] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // modal menu
+  const handleCloseMenu = () => setShowmenu(false);
+  const handleShowMenu = () => setShowmenu(true);
+
   return (
-    <div className="container">
-      <div className="narbar d-flex align-items-center justify-content-between">
-        <div className="rd-navbar-brand">
-          <NavLink className="brand d-none d-xl-block" to="/">
-            <img src="./assets/img/logo.png" alt="ss" />
-          </NavLink>
-          <div>
-            <i
-              id="menuBtn"
-              className="icon bi bi-list d-xl-none hvr-grow-rotate"
-              onClick={handleShow}
-            />
-            {/* The Modal */}
-            <Modal
-              className="modal-menu d-xl-none"
-              show={show}
-              onHide={handleClose}
-            >
-              <Modal.Body>
-                <Navigation></Navigation>
-              </Modal.Body>
-            </Modal>
-          </div>
-        </div>
-
-        <div className="d-none d-xl-block">
-          <Navigation></Navigation>
-        </div>
-
-        <div>
-          <div className="d-flex justify-content-end align-items-center gap-4">
-            <div className="cart position-relative">
-              <div className="number position-absolute">1</div>
-              <NavLink to={"/cart"}>
-                <i className="i bi bi-basket hvr-grow-rotate" />
-              </NavLink>
+    <main>
+      <div className="container">
+        <div className="narbar d-flex align-items-center justify-content-between">
+          <div className="rd-navbar-brand">
+            <NavLink className="brand d-none d-xl-block" to="/">
+              <img src="./assets/img/logo.png" alt="ss" />
+            </NavLink>
+            <div>
+              <i
+                id="menuBtn"
+                className="icon bi bi-list d-xl-none hvr-grow-rotate"
+                onClick={handleShowMenu}
+              />
+              {/* The Modal */}
+              <Modal
+                className="modal-menu d-xl-none"
+                show={showmenu}
+                onHide={handleCloseMenu}
+              >
+                <Modal.Header closeButton></Modal.Header>
+                <Modal.Body>
+                  <Navigation></Navigation>
+                </Modal.Body>
+              </Modal>
             </div>
-            <div className="search wrapper">
-              <div className="i bi bi-search hvr-grow-rotate" id="searchBtn" />
+          </div>
+          <div className="d-none d-xl-block">
+            <Navigation></Navigation>
+          </div>
+          <div>
+            <div className="d-flex justify-content-end align-items-center gap-4">
+              <div className="search">
+                <div class="search-box">
+                  <input
+                    type="text"
+                    placeholder="Search product"
+                    class="search-input"
+                  />
+                  <div class="search-btn">
+                    <i class="fas fa-search" id="searchBtn"></i>
+                  </div>
+                </div>
+              </div>
+              <div className="cart position-relative">
+                <div className="number position-absolute">1</div>
+                <NavLink to={"/cart"}>
+                  <i className="i bi bi-basket hvr-grow-rotate" />
+                </NavLink>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

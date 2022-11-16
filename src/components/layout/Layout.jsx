@@ -9,12 +9,18 @@ const Layout = () => {
     <div>
       <header>
         <HeadingHeader></HeadingHeader>
-        <NavBar/>
+        <NavBar />
       </header>
 
       <Outlet></Outlet>
 
-      <footer>Footer</footer>
+      <footer>
+        Footer
+        <p>dsad</p>
+        <p>dsad</p>
+        <p>dsad</p>
+        <p>dsad</p>v v v<p>dsad</p>
+      </footer>
     </div>
   );
 };

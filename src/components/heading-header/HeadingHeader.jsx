@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./HeadingHeader.css";
-
+import Modal from "react-bootstrap/Modal";
 
 const HeadingHeader = () => {
+  const [showIn, setShowIn] = useState(false);
+  const [showUp, setShowUp] = useState(false);
+
+  // sigin
+  const handleCloseIn = () => {
+    setShowIn(false);
+    setShowUp(false);
+  };
+  const handleShowIn = () => {
+    setShowIn(true);
+    setShowUp(false);
+  };
+
+  // signup
+  const handleCloseUp = () => {
+    setShowUp(false);
+    setShowIn(false);
+  };
+  const handleShowUp = () => {
+    setShowUp(true);
+    setShowIn(false);
+  };
   return (
     <main>
       <div className="heading-header bg-dark text-white">
@@ -30,7 +52,144 @@ const HeadingHeader = () => {
             </div>
             <div className="d-flex align-items-center gap-2">
               <div className="user">
-                <span id="userBtn" className="i-per bi bi-person-circle" />
+                <span
+                  onClick={handleShowIn}
+                  id="userBtn"
+                  className="i-per bi bi-person-circle"
+                />
+                {/* signin */}
+                <Modal show={showIn} onHide={handleCloseIn}>
+                  <Modal.Header closeButton></Modal.Header>
+                  <Modal.Body>
+                    <form action="" method="POST" className="form" id="form-2">
+                      <p className="heading font-mali">SIGN IN</p>
+                      <div className="spacer" />
+                      <div className="form-group">
+                        <label htmlFor="email" className="form-label">
+                          Email
+                        </label>
+                        <input
+                          id="email"
+                          name="email3"
+                          type="text"
+                          placeholder="VD: email@domain.com"
+                          className="form-control"
+                        />
+                        <span className="form-message" />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="password" className="form-label">
+                          Password
+                        </label>
+                        <input
+                          id="password"
+                          name="password3"
+                          type="password"
+                          placeholder="Enter your password"
+                          className="form-control"
+                        />
+                        <span className="form-message" />
+                      </div>
+                      <a href="#" className="link">
+                        Forward your password ?
+                      </a>
+                      <button className="form-submit" id="sign-in">
+                        Sign in
+                      </button>
+                      <p>
+                        Do you have an account?{" "}
+                        <span
+                          className="reg"
+                          id="regBtn"
+                          onClick={handleShowUp}
+                        >
+                          Register now
+                        </span>
+                      </p>
+                      <p className="text-center text-black">OR</p>
+                      <div className="loginWith d-flex justify-content-between">
+                        <i className="icon bi bi-facebook" />
+                        <i className="icon bi bi-google" />
+                      </div>
+                    </form>
+                  </Modal.Body>
+                </Modal>
+                {/* signup */}
+                <Modal show={showUp} onHide={handleCloseUp}>
+                  <Modal.Header closeButton></Modal.Header>
+                  <Modal.Body>
+                    <form action="" method="POST" className="form" id="form-1">
+                      <h3 className="heading font-mali">Sign up</h3>
+                      <div className="spacer" />
+                      <div className="form-group">
+                        <label
+                          htmlFor="fullname"
+                          className="form-label font-poppins"
+                        >
+                          Full name
+                        </label>
+                        <input
+                          id="fullname"
+                          name="fullname2"
+                          type="text"
+                          placeholder="VD: sunsan"
+                          className="form-control"
+                        />
+                        <span className="form-message" />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="email" className="form-label">
+                          Email
+                        </label>
+                        <input
+                          id="email"
+                          name="email2"
+                          type="text"
+                          placeholder="VD: email@domain.com"
+                          className="form-control"
+                        />
+                        <span className="form-message" />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="password" className="form-label">
+                          Password
+                        </label>
+                        <input
+                          id="password"
+                          name="password2"
+                          type="password"
+                          placeholder="Enter your password"
+                          className="form-control"
+                        />
+                        <span className="form-message" />
+                      </div>
+                      <div className="form-group">
+                        <label
+                          htmlFor="password_confirmation"
+                          className="form-label"
+                        >
+                          Re-enter Password
+                        </label>
+                        <input
+                          id="password_confirmation"
+                          name="password_confirmation"
+                          placeholder="Confirm password"
+                          type="password"
+                          className="form-control"
+                        />
+                        <span className="form-message" />
+                      </div>
+                      <button className="form-submit" id="sign-up">
+                        Sign up
+                      </button>
+                      <p className="text-center text-black">OR</p>
+                      <div className="loginWith d-flex justify-content-between">
+                        <i className="icon bi bi-facebook" />
+                        <i className="icon bi bi-google" />
+                      </div>
+                    </form>
+                  </Modal.Body>
+                </Modal>
               </div>
               <div className="select m-2">
                 <select name="language" className="bg-dark">
