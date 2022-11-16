@@ -41,18 +41,16 @@ const NavBar = () => {
           <div className="d-none d-xl-block">
             <Navigation></Navigation>
           </div>
-          <div>
-            <div className="d-flex justify-content-end align-items-center gap-4">
-              <div className="search">
-                <div class="search-box">
-                  <input
-                    type="text"
-                    placeholder="Search product"
-                    class="search-input"
-                  />
-                  <div class="search-btn">
-                    <i class="fas fa-search" id="searchBtn"></i>
-                  </div>
+          <div className="list-item-right-navbar">
+            <div className="d-flex justify-content-end align-items-center gap-3">
+              <div class="search-box d-flex align-items-center justify-content-center">
+                <input
+                  type="text"
+                  placeholder="Search product"
+                  class="search-input"
+                />
+                <div class="search-btn">
+                  <i class="fas fa-search" id="searchBtn"></i>
                 </div>
               </div>
               <div className="cart position-relative">

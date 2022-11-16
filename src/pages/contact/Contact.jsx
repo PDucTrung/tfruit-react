@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Contact = () => {
   return (
-    <main>Contact</main>
-  )
-}
+    <main>
+      <section className="section-page-for">asfsafsafas</section>
+    </main>
+  );
+};
 
-export default Contact
+export default Contact;

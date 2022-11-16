@@ -1,9 +1,9 @@
 .section-slider-home {
-  padding-top: 106px;
+  padding-top: 121px;
 }
 
 @media screen and (min-width: 1200px) {
   .section-slider-home {
-    padding-top: 140px;
+    padding-top: 150px;
   }
 }

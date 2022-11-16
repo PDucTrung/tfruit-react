@@ -31,3 +31,13 @@ header {
   width: 100%;
   background-color: white;
 }
+
+.section-page-for {
+  padding-top: 121px;
+}
+
+@media screen and (min-width: 1200px) {
+  .section-page-for {
+    padding-top: 150px;
+  }
+}
