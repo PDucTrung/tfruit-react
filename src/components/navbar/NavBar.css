@@ -1,5 +1,5 @@
-.narbar{
-    height: max-content;
+.narbar {
+  height: max-content;
 }
 
 .i {
@@ -43,4 +43,29 @@
 .user:hover,
 .select:hover {
   color: #dc143c;
+}
+
+.rd-navbar-brand .icon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.modal-menu .modal-dialog .modal-content .modal-body #nav-menu {
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.modal-menu .modal-dialog {
+  margin-top: 0px !important;
+  margin-left: -17px !important;
+  height: 100%;
+}
+
+.modal-menu .modal-dialog .modal-content {
+  height: 100%;
+  width: 50%;
+  border-radius: 0;
 }

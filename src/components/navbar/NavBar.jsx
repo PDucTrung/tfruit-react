@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "../navigation/Navigation";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./NavBar.css";
+import Modal from "react-bootstrap/Modal";
 
 const NavBar = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div className="container">
       <div className="narbar d-flex align-items-center justify-content-between">
@@ -15,15 +20,25 @@ const NavBar = () => {
             <i
               id="menuBtn"
               className="icon bi bi-list d-xl-none hvr-grow-rotate"
+              onClick={handleShow}
             />
             {/* The Modal */}
-            <div id="menuModal" className="modal4 d-xl-none">
-              {/* Modal content */}
-            </div>
+            <Modal
+              className="modal-menu d-xl-none"
+              show={show}
+              onHide={handleClose}
+            >
+              <Modal.Body>
+                <Navigation></Navigation>
+              </Modal.Body>
+            </Modal>
           </div>
         </div>
 
-        <Navigation></Navigation>
+        <div className="d-none d-xl-block">
+          <Navigation></Navigation>
+        </div>
+
         <div>
           <div className="d-flex justify-content-end align-items-center gap-4">
             <div className="cart position-relative">

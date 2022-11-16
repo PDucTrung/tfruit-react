@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Navigation.module.css";
 
@@ -27,7 +27,7 @@ const menu = [
 
 const Navigation = () => {
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.nav} id="nav-menu">
       {menu.map((item) => (
         <NavLink
           key={item.path}
@@ -40,4 +40,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation
+export default Navigation;
