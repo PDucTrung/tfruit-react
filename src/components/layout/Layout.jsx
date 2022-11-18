@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Outlet } from "react-router-dom";
+import Footer from "../footer/Footer";
 import HeadingHeader from "../heading-header/HeadingHeader";
 import NavBar from "../navbar/NavBar";
 
@@ -15,11 +16,7 @@ const Layout = () => {
       <Outlet></Outlet>
 
       <footer>
-        Footer
-        <p>dsad</p>
-        <p>dsad</p>
-        <p>dsad</p>
-        <p>dsad</p>v v v<p>dsad</p>
+        <Footer></Footer>
       </footer>
     </div>
   );

@@ -2,8 +2,10 @@ import React from 'react'
 
 const Blog = () => {
   return (
-    <main>Blog</main>
-  )
+    <main>
+      <section className="section-page-for">blog</section>
+    </main>
+  );
 }
 
 export default Blog

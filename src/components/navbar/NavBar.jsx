@@ -43,14 +43,14 @@ const NavBar = () => {
           </div>
           <div className="list-item-right-navbar">
             <div className="d-flex justify-content-end align-items-center gap-3">
-              <div class="search-box d-flex align-items-center justify-content-center">
+              <div className="search-box d-flex align-items-center justify-content-center">
                 <input
                   type="text"
                   placeholder="Search product"
-                  class="search-input"
+                  className="search-input"
                 />
-                <div class="search-btn">
-                  <i class="fas fa-search" id="searchBtn"></i>
+                <div className="search-btn">
+                  <i className="fas fa-search" id="searchBtn"></i>
                 </div>
               </div>
               <div className="cart position-relative">

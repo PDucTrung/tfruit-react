@@ -1,0 +1,156 @@
+.footer {
+  width: 100%;
+  height: max-content;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.text-gray-fo {
+  color: #808080;
+}
+
+.gird-footer1 p {
+  font-style: 16px;
+  font-weight: 400;
+}
+
+.line {
+  width: 260px;
+  border-bottom: 2px solid gray;
+  margin: 0 auto;
+  height: 0;
+  margin-bottom: 10px;
+}
+
+.gird-footer1 form {
+  height: max-content;
+}
+
+.gird-footer1 form .form-group {
+  height: max-content;
+}
+
+.gird-footer1 form .form-submit {
+  height: max-content;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-radius: 0px;
+  text-transform: uppercase;
+  background-color: white;
+  color: #000;
+  font-size: 16px;
+}
+
+.gird-footer1 form .form-submit:hover {
+  color: white;
+  background-color: #f5ab1e;
+  transition: all 0.3s linear;
+}
+
+.gird-footer1 form .form-control {
+  height: max-content;
+  border-radius: 0px;
+  background-color: #41403e;
+  color: white !important;
+}
+
+.form-footer {
+  padding: 0px;
+  height: max-content;
+}
+
+.gird-footer1 i:hover {
+  color: #f5ab1e;
+}
+
+.title-page-fo h1 {
+  font-size: 14px;
+}
+
+.title-page-fo p {
+  font-size: 10px;
+}
+
+.gird-footer2 a {
+  text-decoration: none;
+}
+
+.gird-footer2 a:hover {
+  color: orange;
+}
+
+.footer h4 {
+    margin-top: 10px;
+  }
+
+@media screen and (min-width: 576px) {
+  .modal-content3 {
+    width: 400px;
+  }
+  .search-text {
+    width: 390px;
+  }
+
+  .title-page-fo h1 {
+    font-size: 20px;
+  }
+
+  .title-page-fo p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal-content3 {
+    width: 600px;
+  }
+  .search-text {
+    width: 590px;
+  }
+  .ft-3 {
+    margin-top: 40px;
+  }
+
+  .ft-2 {
+    margin-top: 8.5px;
+  }
+
+  .ft-2 p {
+    text-align: left;
+  }
+  .title-page-fo h1 {
+    font-size: 28px;
+  }
+
+  .title-page-fo p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .ft-3 {
+    margin-top: 8.5px;
+  }
+
+  .ft-2 {
+    margin-top: 8.5px;
+  }
+
+  .title-page-fo h1 {
+    font-size: 36px;
+  }
+
+  .title-page-fo p {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .title-page-fo h1 {
+    font-size: 48px;
+  }
+
+  .title-page-fo p {
+    font-size: 24px;
+  }
+}

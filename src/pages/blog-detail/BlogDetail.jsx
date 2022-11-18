@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const BlogDetail = () => {
   return (
-    <main>BlogDetail</main>
-  )
-}
+    <main>
+      <section className="section-page-for">blogdetail</section>
+    </main>
+  );
+};
 
-export default BlogDetail
+export default BlogDetail;

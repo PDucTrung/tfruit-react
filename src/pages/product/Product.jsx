@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Product = () => {
   return (
-    <main>Product</main>
-  )
-}
+    <main>
+      <section className="section-page-for">shop</section>
+    </main>
+  );
+};
 
-export default Product
+export default Product;
