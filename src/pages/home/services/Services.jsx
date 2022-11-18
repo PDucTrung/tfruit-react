@@ -1,15 +1,12 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 import "./Services.css";
 
 const Services = () => {
   return (
     <div className="service d-flex flex-column gap-5 flex-sm-row flex-sm-wrap justify-content-sm-center gap-sm-5 align-items-md-center">
       <div className="list-service-1 d-flex flex-column gap-5 align-items-center order-md-1">
-        <div
-          className="box-service ml-20"
-          data-aos="fade-down-right"
-          data-aos-delay={200}
-        >
+        <div className="box-service ml-20">
           <div className="row d-flex box-sr">
             <div className="col-9 order-2 ct-sr">
               <div className="title-service font-mali">100% Organic</div>
@@ -18,16 +15,12 @@ const Services = () => {
                 and tasty
               </div>
             </div>
-            <div className="col-3 order-1 icon-service ">
+            <div className="col-3 order-1 icon-service hvr-buzz-out">
               <img src="./assets/img/service-1.png" alt="ss" />
             </div>
           </div>
         </div>
-        <div
-          className="box-service"
-          data-aos="fade-down-right"
-          data-aos-delay={300}
-        >
+        <div className="box-service">
           <div className="row d-flex box-sr">
             <div className="col-9 order-2 ct-sr">
               <div className="title-service font-mali">Support 24/7</div>
@@ -35,16 +28,12 @@ const Services = () => {
                 Always support customers at all times of the day.
               </div>
             </div>
-            <div className="col-3 order-1 icon-service ">
+            <div className="col-3 order-1 icon-service hvr-buzz-out">
               <img src="./assets/img/service-2.png" alt="ss" />
             </div>
           </div>
         </div>
-        <div
-          className="box-service ml-20"
-          data-aos="fade-down-right"
-          data-aos-delay={400}
-        >
+        <div className="box-service ml-20">
           <div className="row d-flex box-sr">
             <div className="col-9 order-2 ct-sr">
               <div className="title-service font-mali">Secure Payment</div>
@@ -52,18 +41,14 @@ const Services = () => {
                 Great customer support, best services and secure payment
               </div>
             </div>
-            <div className="col-3 order-1 icon-service ">
+            <div className="col-3 order-1 icon-service hvr-buzz-out">
               <img src="./assets/img/service-3.png" alt="ss" />
             </div>
           </div>
         </div>
       </div>
       <div className="list-service-2 d-flex flex-column gap-5 align-items-center order-md-3">
-        <div
-          className="box-service mr-20"
-          data-aos="fade-down-left"
-          data-aos-delay={200}
-        >
+        <div className="box-service mr-20">
           <div className="row d-flex box-sr">
             <div className="col-9 order-2 ct-sr order-lg-1">
               <div className="title-service font-mali">Fresh &amp; Healthy</div>
@@ -71,16 +56,12 @@ const Services = () => {
                 Obtaining the recommended daily fruits and vegetables.
               </div>
             </div>
-            <div className="col-3 order-1 icon-service order-lg-2 ">
+            <div className="col-3 order-1 icon-service order-lg-2 hvr-buzz-out">
               <img src="./assets/img/service-4.png" alt="ss" />
             </div>
           </div>
         </div>
-        <div
-          className="box-service"
-          data-aos="fade-down-left"
-          data-aos-delay={300}
-        >
+        <div className="box-service">
           <div className="row d-flex box-sr">
             <div className="col-9 order-2 ct-sr order-lg-1">
               <div className="title-service font-mali">Fresh Products</div>
@@ -88,16 +69,12 @@ const Services = () => {
                 We deliver organic pesticide-free and sustainably-grown produce.
               </div>
             </div>
-            <div className="col-3 order-1 icon-service order-lg-2 ">
+            <div className="col-3 order-1 icon-service order-lg-2 hvr-buzz-out">
               <img src="./assets/img/service-5.png" alt="ss" />
             </div>
           </div>
         </div>
-        <div
-          className="box-service mr-20"
-          data-aos="fade-down-left"
-          data-aos-delay={400}
-        >
+        <div className="box-service mr-20">
           <div className="row d-flex box-sr">
             <div className="col-9 order-2 ct-sr order-lg-1">
               <div className="title-service font-mali">Free Shipping</div>
@@ -114,8 +91,6 @@ const Services = () => {
       </div>
       <div
         className="img-service order-md-2"
-        data-aos="zoom-in-down"
-        data-aos-delay={400}
       >
         <img src="./assets/img/iservice.png" alt="zz" />
       </div>

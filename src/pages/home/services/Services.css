@@ -1,4 +1,9 @@
 /* service */
+.section-service {
+  height: max-content;
+  margin-top: 40px;
+  padding: 20px;
+}
 
 .service {
   width: 100%;

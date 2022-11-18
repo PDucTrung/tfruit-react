@@ -1,5 +1,5 @@
 .section-slider-home {
-  padding-top: 111px;
+  padding-top: 121px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -8,8 +8,3 @@
   }
 }
 
-.section-service {
-  height: max-content;
-  margin-top: 40px;
-  padding: 20px;
-}

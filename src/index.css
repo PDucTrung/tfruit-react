@@ -12,11 +12,6 @@ img {
   vertical-align: middle;
 }
 
-html,
-body {
-  max-width: 100%;
-}
-
 .font-poppins {
   font-family: "Poppins", sans-serif;
 }
@@ -27,9 +22,11 @@ body {
 
 header {
   position: fixed;
-  z-index: 999;
+  z-index: 10;
   width: 100%;
   background-color: white;
+  top: 0;
+  left: 0;
 }
 
 .section-page-for {

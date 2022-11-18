@@ -1,4 +1,5 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 import SliderHome from "../../components/slider-home/SliderHome";
 import "./Home.css";
 import Offer from "./section-offer/Offer";

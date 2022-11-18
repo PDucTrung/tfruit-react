@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
 import "./Offer.css";
 
 const Offer = () => {
@@ -48,13 +49,9 @@ const Offer = () => {
 
   return (
     <main>
-      <div className="container">
+      <Container className="container">
         <div className="list-offer d-flex flex-column gap-5 flex-lg-row justify-content-center align-items-center">
-          <div
-            className="offer position-relative d-flex justify-content-between"
-            data-aos="fade-down-right"
-            data-aos-delay={300}
-          >
+          <div className="offer position-relative d-flex justify-content-between">
             <img src="./assets/img/offer1.png" alt="ss" />
             <div className="content-offer position-absolute d-flex flex-column justify-content-between">
               <div className="font-poppins best order-1">Best offer</div>
@@ -70,11 +67,7 @@ const Offer = () => {
               </div>
             </div>
           </div>
-          <div
-            className="offer position-relative d-flex justify-content-between"
-            data-aos="fade-down-left"
-            data-aos-delay={300}
-          >
+          <div className="offer position-relative d-flex justify-content-between">
             <img src="./assets/img/offer2.png" alt="ss" />
             <div className="content-offer position-absolute d-flex flex-column justify-content-between">
               <div className="font-poppins best order-1">Best offer</div>
@@ -93,7 +86,7 @@ const Offer = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </main>
   );
 };

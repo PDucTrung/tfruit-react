@@ -1,5 +1,6 @@
 .narbar {
   height: max-content;
+  padding: 10px 0;
 }
 
 .i {
@@ -118,6 +119,12 @@
   background: #fff;
 }
 
-.list-item-right-navbar{
+.list-item-right-navbar {
   padding-right: 20px;
+}
+
+@media screen and (min-width: 1200px) {
+  .narbar {
+    padding: 0;
+  }
 }

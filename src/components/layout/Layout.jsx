@@ -7,7 +7,7 @@ import NavBar from "../navbar/NavBar";
 
 const Layout = () => {
   return (
-    <div>
+    <main>
       <header>
         <HeadingHeader></HeadingHeader>
         <NavBar />
@@ -18,7 +18,7 @@ const Layout = () => {
       <footer>
         <Footer></Footer>
       </footer>
-    </div>
+    </main>
   );
 };
 

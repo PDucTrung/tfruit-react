@@ -8,8 +8,16 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import "aos/dist/aos.css";
-import AOS from "aos";
 
+// library
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import AOS from "aos";
+import "hover.css/css/hover.css";
+
+// router
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
