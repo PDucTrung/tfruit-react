@@ -7,6 +7,8 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
@@ -17,6 +19,13 @@ import Layout from "./components/layout/Layout";
 import Cart from "./pages/cart/Cart";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+
+// aos
+AOS.init({
+  offset: 200,
+  duration: 300,
+  once: true,
+});
 
 const routes = createRoutesFromElements(
   <Route element={<Layout />}>

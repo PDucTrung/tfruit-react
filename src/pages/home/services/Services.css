@@ -1,0 +1,152 @@
+/* service */
+
+.service {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.img-service {
+  margin: 0 auto;
+}
+
+.img-service img {
+  width: 280px;
+  height: 290px;
+}
+
+.title-service {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.content-service {
+  font-size: 12px;
+  font-weight: 400;
+  width: 200px;
+  text-align: left;
+}
+
+.icon-service img {
+  margin: 0 auto;
+}
+
+.icon-service {
+  width: 70px !important;
+  height: 70px !important;
+  border-radius: 50%;
+  border: 3px solid #62a403;
+  overflow: hidden;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.icon-service:hover {
+  border: 3px solid orange;
+}
+
+.list-service-1 {
+  width: 100%;
+}
+
+.list-service-2 {
+  width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .content-service {
+  }
+  .title-service {
+  }
+  .box-sr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .list-service-1 {
+    width: max-content;
+  }
+  .list-service-2 {
+    width: max-content;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .title-service {
+    width: 100px;
+  }
+  .content-service {
+    width: 100px;
+  }
+  .img-service img {
+    width: 190px;
+    height: 200px;
+  }
+  .box-sr {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    align-items: center;
+  }
+  .img-service {
+    width: max-content;
+  }
+  .ct-sr {
+    width: max-content;
+  }
+  .service {
+    padding: 0px 40px 0px 40px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .title-service {
+    width: max-content;
+  }
+  .content-service {
+    width: 200px;
+  }
+  .service {
+    padding: 0px 20px 0px 20px;
+  }
+  .ml-20 {
+    margin-left: 20px;
+  }
+
+  .mr-20 {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .ml-20 {
+    margin-left: 40px;
+  }
+
+  .mr-20 {
+    margin-right: 40px;
+  }
+  .img-service img {
+    width: 340px;
+    height: 350px;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .title-service {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .content-service {
+    width: 300px;
+    font-size: 16px;
+    font-family: "poppins";
+  }
+  .img-service img {
+    width: 380px;
+    height: 400px;
+  }
+}
