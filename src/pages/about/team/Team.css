@@ -1,0 +1,49 @@
+.list-icon-follow i {
+  color: black;
+  cursor: pointer;
+}
+
+.list-icon-follow i:hover {
+  color: orange;
+}
+
+.team {
+  width: max-content;
+  padding-bottom: 20px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.team:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 20px;
+  transition: all 0.2s linear;
+  overflow: hidden;
+}
+
+.text-team {
+  width: 360px;
+}
+
+.section-our-team {
+  padding-top: 40px;
+  padding-bottom: 100px;
+}
+
+.section-our-team .swiper-wrapper {
+  padding-bottom: 60px;
+  padding-top: 20px;
+}
+
+.section-our-team img {
+  border-radius: 10px;
+}
+
+.section-our-team .swiper-pagination .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+}
+
+.section-our-team .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: black;
+}

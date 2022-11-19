@@ -171,6 +171,19 @@ header {
   transform: translate(-50%, -150%);
 }
 
+.btn-submit {
+  padding: 10px 40px;
+  border: 2px solid green;
+  color: white;
+  background-color: green;
+}
+
+.btn-submit:hover {
+  color: green;
+  background-color: white;
+  transition: all 0.3s linear;
+}
+
 @media screen and (min-width: 576px) {
   .section-page-for .title-page-fo {
     transform: translate(-50%, -180%) !important;

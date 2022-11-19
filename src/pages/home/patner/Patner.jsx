@@ -27,7 +27,6 @@ const Patner = () => {
             992: {
               slidesPerView: 4,
             },
-        
           }}
         >
           <SwiperSlide className="partner">
