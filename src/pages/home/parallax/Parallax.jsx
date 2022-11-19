@@ -9,7 +9,7 @@ const Parallax = () => {
     <ScrollTrigger onEnter={() => setCounterOn(true)}>
       <div
         className="para position-relative parallax-container"
-        data-parallax-img="./assets/img/scroll-1.jpg"
+        
       >
         <div className="parallax-content">
           <div className="container">
