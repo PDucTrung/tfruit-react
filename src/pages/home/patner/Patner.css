@@ -1,0 +1,24 @@
+.section-partners {
+  width: 100%;
+  background-color: white;
+  height: max-content;
+  padding: 10px 0;
+}
+
+.partner img {
+  margin: 0 auto;
+  opacity: 0.6;
+}
+
+.partner img:hover {
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out;
+}
+
+.partner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

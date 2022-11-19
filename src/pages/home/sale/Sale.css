@@ -1,0 +1,57 @@
+.section-sale {
+  width: 100%;
+  height: max-content;
+}
+
+.sale {
+  width: 100%;
+  height: max-content;
+}
+
+.sale img {
+  width: 100%;
+  min-height: 520px;
+  max-height: 560px;
+}
+
+.content-sale {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content-sale .but-sale a {
+  color: white;
+}
+
+.content-sale .but-sale a:hover {
+  color: orange;
+}
+
+.p-sale-1 {
+  font-size: 20px;
+  font-weight: 400;
+}
+.p-sale-2 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.box-time {
+  border-radius: 10px;
+  padding: 5px 20px 5px 20px;
+  background-color: #ff8c00;
+  cursor: pointer;
+}
+
+#days,
+#hours,
+#minutes,
+#seconds {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.text-sale {
+  font-size: 10px;
+}

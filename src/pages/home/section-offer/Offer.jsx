@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import "./Offer.css";
 
 const Offer = () => {
@@ -61,9 +62,9 @@ const Offer = () => {
               </div>
               <div className="font-popins coconut order-3">Coconut Fresh</div>
               <div className="font-mali shopnow order-4">
-                <a className="text-decoration-none" href="product.html">
+                <NavLink className="text-decoration-none" to={"/product"}>
                   Shop now
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -79,9 +80,9 @@ const Offer = () => {
                 Get Garden Fresh Pure Orange
               </div>
               <div className="font-mali shopnow order-4">
-                <a className="text-decoration-none" href="product.html">
+                <NavLink className="text-decoration-none" to={"/product"}>
                   Shop now
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>

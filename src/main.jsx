@@ -23,8 +23,11 @@ import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import Product from "./pages/product/Product";
 import Blog from "./pages/blog/Blog";
+import BlogDetail from "./pages/blog-detail/BlogDetail";
 import Layout from "./components/layout/Layout";
 import Cart from "./pages/cart/Cart";
+import Checkout from "./pages/checkout/Checkout";
+import ProductDetail from "./pages/product-detail/ProductDetail";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
@@ -66,6 +69,24 @@ const routes = createRoutesFromElements(
     <Route
       path="/cart"
       element={<Cart />}
+      // loader={Home.loader}
+    />
+
+    <Route
+      path="/blog-detail"
+      element={<BlogDetail />}
+      // loader={Home.loader}
+    />
+
+    <Route
+      path="/checkout"
+      element={<Checkout />}
+      // loader={Home.loader}
+    />
+
+    <Route
+      path="/product-detail"
+      element={<ProductDetail />}
       // loader={Home.loader}
     />
 

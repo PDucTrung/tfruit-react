@@ -30,11 +30,287 @@ header {
 }
 
 .section-page-for {
-  padding-top: 111px;
+  padding-top: 131px;
+  width: 100%;
 }
 
 @media screen and (min-width: 1200px) {
   .section-page-for {
     padding-top: 140px;
+  }
+}
+
+.text-orange-fo {
+  color: orange;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-13 {
+  font-size: 13px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-15 {
+  font-size: 15px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-40 {
+  font-size: 40px;
+}
+
+.text-green {
+  color: #006400;
+}
+
+.name-pr-fr a:hover {
+  color: orange !important;
+}
+
+.cart a {
+  color: #000;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* animation img */
+/*  */
+.page-fo .img-fill {
+  position: relative;
+  height: 100%;
+}
+.page-fo .img-fill img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  animation: Move 6s linear infinite;
+}
+
+.page-fo .img-fill:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #151515;
+  opacity: 0.5;
+}
+
+/*  */
+.page-fo .img-fill2 {
+  position: relative;
+  height: 100%;
+}
+.page-fo .img-fill2 img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  animation: Move 6s linear infinite;
+}
+
+.page-fo .img-fill2:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #15151552;
+  opacity: 0.5;
+}
+
+/*  */
+
+.page-fo {
+  height: max-content;
+  overflow: hidden;
+}
+
+.section-page-for .title-page-fo {
+  left: 50%;
+  transform: translate(-50%, -150%);
+}
+
+@media screen and (min-width: 576px) {
+  .section-page-for .title-page-fo {
+    transform: translate(-50%, -180%) !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section-page-for .title-page-fo {
+    transform: translate(-50%, -200%) !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .section-page-for .title-page-fo {
+    transform: translate(-50%, -250%) !important;
+  }
+}
+
+@keyframes Move {
+  from {
+    transform: scale(1, 1);
+    transform-origin: 50% 50%;
+  }
+  to {
+    transform: scale(1.5, 1.6);
+    transform-origin: 50% 0%;
+  }
+}
+
+@-webkit-keyframes glowing {
+  0% {
+    background-color: #32cd32;
+    -webkit-box-shadow: 0 0 3px #32cd32;
+  }
+  50% {
+    background-color: green;
+    -webkit-box-shadow: 0 0 10px green;
+  }
+  100% {
+    background-color: #006400;
+    -webkit-box-shadow: 0 0 3px #006400;
+  }
+}
+
+@-moz-keyframes glowing {
+  0% {
+    background-color: #32cd32;
+    -moz-box-shadow: 0 0 3px #32cd32;
+  }
+  50% {
+    background-color: green;
+    -moz-box-shadow: 0 0 10px green;
+  }
+  100% {
+    background-color: #006400;
+    -moz-box-shadow: 0 0 3px #006400;
+  }
+}
+
+@-o-keyframes glowing {
+  0% {
+    background-color: #32cd32;
+    box-shadow: 0 0 3px #32cd32;
+  }
+  50% {
+    background-color: green;
+    box-shadow: 0 0 10px green;
+  }
+  100% {
+    background-color: #006400;
+    box-shadow: 0 0 3px #006400;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-color: #32cd32;
+    box-shadow: 0 0 3px #32cd32;
+  }
+  50% {
+    background-color: green;
+    box-shadow: 0 0 10px green;
+  }
+  100% {
+    background-color: #006400;
+    box-shadow: 0 0 3px #006400;
+  }
+}
+
+@-webkit-keyframes textfl {
+  0% {
+    color: green;
+  }
+  50% {
+    color: #32cd32;
+  }
+  100% {
+    color: green;
+  }
+}
+@-moz-keyframes textfl {
+  0% {
+    color: green;
+  }
+  50% {
+    color: #32cd32;
+  }
+  100% {
+    color: green;
+  }
+}
+@-o-keyframes textfl {
+  0% {
+    color: green;
+  }
+  50% {
+    color: #32cd32;
+  }
+  100% {
+    color: green;
+  }
+}
+@keyframes textfl {
+  0% {
+    color: green;
+  }
+  50% {
+    color: #32cd32;
+  }
+  100% {
+    color: green;
+  }
+}
+
+@keyframes btnFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(300%);
+  }
+  to {
+    opacity: 1;
   }
 }

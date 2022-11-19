@@ -1,0 +1,146 @@
+.text-cmthome-1 i {
+  color: orange;
+  font-size: 20px;
+}
+
+.abouthome {
+  padding: auto;
+  margin: auto;
+  width: 100%;
+  height: max-content;
+}
+
+.content-abouthome {
+  padding: 20px;
+}
+
+.text-content-ab-1 {
+  font-family: "Mali";
+  font-style: italic;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 31px;
+  color: #006400;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.text-content-ab-2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #000000;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.text-content-ab-3 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+.text-next-ab-1 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.text-next-ab-2 {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.i-ab {
+  font-size: 25px;
+  color: white;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.icon-next-ab {
+  margin-top: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+  width: 59.82px;
+  height: 59.32px;
+  background: #e52029;
+  border-radius: 50px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.content-abouthome {
+  width: max-content;
+  margin: 0 auto;
+  padding: auto;
+}
+
+.img-abouthome {
+  margin: 0 auto;
+  width: max-content;
+}
+
+.next-about {
+  padding-top: 10px;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.icon-next-ab:hover {
+  background-color: orange;
+  transition: all 0.3s linear;
+}
+
+@media screen and (min-width: 576px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+  .content-abouthome {
+    width: 50%;
+  }
+
+  .img-abouthome {
+    width: 50%;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .next-about {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
+}
