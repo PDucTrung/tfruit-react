@@ -1,5 +1,5 @@
 import React from "react";
-import PageFo from "../Contact/page-fo/PageFo";
+import PageFo from "../contact/page-fo/PageFo";
 
 const Contact = () => {
   return (
