@@ -66,3 +66,8 @@
 .content-add-cmt form {
   width: 100%;
 }
+
+.section-blog-detail .pr-search .search-box-pr {
+  padding: 10px 40px;
+  font-size: 14px;
+}
