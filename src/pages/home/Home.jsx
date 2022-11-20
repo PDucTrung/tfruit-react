@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import SliderHome from "../../components/slider-home/SliderHome";
+import SliderHome from "./slider-home/SliderHome";
 import AboutHome from "./about-home/AboutHome";
 import CommentHome from "./cmt-Home/CommentHome";
 import "./Home.css";

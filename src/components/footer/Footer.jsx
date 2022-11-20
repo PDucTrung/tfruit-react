@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="col-12 col-md-6 col-lg-4">
               <div className="gird-footer1 text-center d-flex flex-column gap-3">
                 <div>
-                  <img src="./assets/img/logo2.png" alt="ss" />
+                  <img src="../assets/img/logo2.png" alt="ss" />
                 </div>
                 <p className="text-gray-fo">Weekdays: 08:00am - 08:00pm</p>
                 <p className="text-gray-fo">Weekends: 10:00am - 06:00pm</p>

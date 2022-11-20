@@ -40,9 +40,9 @@ const ListVegetable = () => {
               data-aos="fade-down-right"
               data-aos-delay={200}
             >
-              <a
+              <NavLink
                 className="text-decoration-none text-black"
-                href="productdetail.html?id=1"
+                to={"/product-detail/1"}
               >
                 <img
                   className="img-pr"
@@ -60,17 +60,9 @@ const ListVegetable = () => {
                     &nbsp;&nbsp;&nbsp;&nbsp; <span>$ 3.29</span>
                   </p>
                 </div>
-              </a>
+              </NavLink>
               <div className="add-cart position-absolute">
-                <a
-                  className="text-decoration-none text-black"
-                  href="productdetail.html?id=1"
-                ></a>
                 <div className="button button-2">
-                  <a
-                    className="text-decoration-none text-black"
-                    href="productdetail.html?id=1"
-                  ></a>
                   <NavLink className="text-decoration-none" to={"/product"}>
                     SHOP NOW
                   </NavLink>
@@ -82,9 +74,9 @@ const ListVegetable = () => {
               data-aos="fade-down-left"
               data-aos-delay={200}
             >
-              <a
+              <NavLink
                 className="text-decoration-none text-black"
-                href="productdetail.html?id=2"
+                to={"/product-detail/2"}
               >
                 <img
                   className="img-pr"
@@ -99,17 +91,9 @@ const ListVegetable = () => {
                     <span>$ 3.99</span>
                   </p>
                 </div>
-              </a>
+              </NavLink>
               <div className="add-cart position-absolute">
-                <a
-                  className="text-decoration-none text-black"
-                  href="productdetail.html?id=2"
-                ></a>
                 <div className="button button-2">
-                  <a
-                    className="text-decoration-none text-black"
-                    href="productdetail.html?id=2"
-                  ></a>
                   <NavLink className="text-decoration-none" to={"/product"}>
                     SHOP NOW
                   </NavLink>
@@ -121,9 +105,9 @@ const ListVegetable = () => {
               data-aos="fade-up-right"
               data-aos-delay={200}
             >
-              <a
+              <NavLink
                 className="text-decoration-none text-black"
-                href="productdetail.html?id=22"
+                to={"/product-detail/22"}
               >
                 <img
                   className="img-pr"
@@ -138,17 +122,9 @@ const ListVegetable = () => {
                     <span>$ 2.99</span>
                   </p>
                 </div>
-              </a>
+              </NavLink>
               <div className="add-cart position-absolute">
-                <a
-                  className="text-decoration-none text-black"
-                  href="productdetail.html?id=22"
-                ></a>
                 <div className="button button-2">
-                  <a
-                    className="text-decoration-none text-black"
-                    href="productdetail.html?id=22"
-                  ></a>
                   <NavLink className="text-decoration-none" to={"/product"}>
                     SHOP NOW
                   </NavLink>
@@ -160,9 +136,9 @@ const ListVegetable = () => {
               data-aos="fade-up-left"
               data-aos-delay={200}
             >
-              <a
+              <NavLink
                 className="text-decoration-none text-black"
-                href="productdetail.html?id=7"
+                to={"/product-detail/7"}
               >
                 <img
                   className="img-pr"
@@ -177,17 +153,9 @@ const ListVegetable = () => {
                     <span>$ 1.99</span>
                   </p>
                 </div>
-              </a>
+              </NavLink>
               <div className="add-cart position-absolute">
-                <a
-                  className="text-decoration-none text-black"
-                  href="productdetail.html?id=7"
-                ></a>
                 <div className="button button-2">
-                  <a
-                    className="text-decoration-none text-black"
-                    href="productdetail.html?id=7"
-                  ></a>
                   <NavLink className="text-decoration-none" to={"/product"}>
                     SHOP NOW
                   </NavLink>

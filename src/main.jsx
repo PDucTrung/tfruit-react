@@ -30,6 +30,7 @@ import Checkout from "./pages/checkout/Checkout";
 import ProductDetail from "./pages/product-detail/ProductDetail";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import Shop from "./pages/product/shop/Shop";
 
 // aos
 AOS.init({
@@ -58,7 +59,8 @@ const routes = createRoutesFromElements(
     <Route
       path="/product"
       element={<Product />}
-      // loader={Home.loader}
+      loader={Shop.loader}
+      errorElement={<div>Something wrong :(</div>}
     />
     <Route
       path="/blog"
@@ -85,9 +87,10 @@ const routes = createRoutesFromElements(
     />
 
     <Route
-      path="/product-detail"
+      path="/product-detail/:productId"
       element={<ProductDetail />}
-      // loader={Home.loader}
+      loader={ProductDetail.loader}
+      errorElement={<div>Something wrong :(</div>}
     />
 
     <Route path="*" element={<div>Page Not Found</div>} />
