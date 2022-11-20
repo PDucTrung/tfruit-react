@@ -17,6 +17,48 @@ const Shop = () => {
 
   const filterRef = useRef();
 
+  // filter range
+  const filterRange = () => {
+    console.log(
+      products.filter((pr) => pr.price >= Min.x && pr.price <= Max.x)
+    );
+  };
+
+  // search pr
+
+  const search = (e) => {
+    console.log(
+      products.filter((pr) => {
+        if (pr.name.toUpperCase().indexOf(e.target.value.toUpperCase().trim()) == -1) {
+          return null;
+        } else
+          return (
+            pr.name.toUpperCase().indexOf(e.target.value.toUpperCase().trim()) > -1
+          );
+      })
+    );
+  };
+
+  // sort
+  let productCopy = [...products];
+  const sort = (e) => {
+    if (e.target.value === "ascending") {
+      return products.sort((a, b) => a.price - b.price);
+    } else if (e.target.value == "descending") {
+      return products.sort((a, b) => b.price - a.price);
+    } else if (e.target.value == "nameascending") {
+      return products.sort((a, b) =>
+        a.name !== b.name ? (a.name < b.name ? -1 : 1) : 0
+      );
+    } else if (e.target.value == "namedescending") {
+      return products.sort((a, b) =>
+        a.name !== b.name ? (a.name > b.name ? -1 : 1) : 0
+      );
+    } else {
+      return productCopy;
+    }
+  };
+
   const filteredProducts = products.filter((product) => {
     if (filter.length === 0) return true;
     else return filter.includes(product.category);
@@ -43,7 +85,6 @@ const Shop = () => {
     (currentPage + 1) * pageSize
   );
 
-
   return (
     <div className="container">
       <div className="row">
@@ -53,12 +94,16 @@ const Shop = () => {
             <p className="fs-16 fw-400">Showing 1–9 of 24 results</p>
             <div className="sort-content fs-16 fw-400 position-relative">
               <i className="bi bi-caret-down-fill position-absolute" />
-              <select className="sort-price" name="sort">
+              <select
+                className="sort-price"
+                name="sort"
+                onChange={(e) => sort(e)}
+              >
                 <option value="default">Sort product by</option>
                 <option value="ascending">Price ascending</option>
                 <option value="descending">Price descending</option>
-                <option value="name">Name ascending</option>
-                <option value="name">Name descending</option>
+                <option value="nameascending">Name ascending</option>
+                <option value="namedescending">Name descending</option>
               </select>
             </div>
           </div>
@@ -89,6 +134,7 @@ const Shop = () => {
                 name="search-pr"
                 id=""
                 placeholder="Product search..."
+                onKeyUp={(e) => search(e)}
               />
               <i className="icon bi bi-search position-absolute" />
               <ul className="text-to-search" />
@@ -189,13 +235,7 @@ const Shop = () => {
                 <br />
                 <br />
                 <div className="d-flex justify-content-center gap-5">
-                  <div
-                    className="button button-2"
-                    onClick={() => {
-                      console.log(Min.x);
-                      console.log(Max.x);
-                    }}
-                  >
+                  <div className="button button-2" onClick={filterRange}>
                     FIlter
                   </div>
                   <div className="d-flex align-items-center">

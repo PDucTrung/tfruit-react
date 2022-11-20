@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navigation from "../navigation/Navigation";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
@@ -10,6 +10,33 @@ const NavBar = () => {
   // modal menu
   const handleCloseMenu = () => setShowmenu(false);
   const handleShowMenu = () => setShowmenu(true);
+
+  // search
+  const [ProductList, setProductList] = useState([]);
+  useEffect(() => {
+    async function getData() {
+      const res = await fetch("https://jsonsv.herokuapp.com/products");
+      const products = await res.json();
+      setProductList(products);
+    }
+    getData();
+  }, []);
+
+  const search = (e) => {
+    const productSearch = ProductList.filter((pr) => {
+      if (
+        pr.name.toUpperCase().indexOf(e.target.value.toUpperCase().trim()) == -1
+      ) {
+        return null;
+      } else
+        return (
+          pr.name.toUpperCase().indexOf(e.target.value.toUpperCase().trim()) >
+          -1
+        );
+    });
+
+    console.log(productSearch);
+  };
 
   return (
     <main>
@@ -43,14 +70,20 @@ const NavBar = () => {
           </div>
           <div className="list-item-right-navbar">
             <div className="d-flex justify-content-end align-items-center gap-3">
-              <div className="search-box d-flex align-items-center justify-content-center">
+              <div className="search-box d-flex align-items-center justify-content-center position-relative">
                 <input
                   type="text"
                   placeholder="Search product"
                   className="search-input"
+                  onKeyUp={(e) => search(e)}
                 />
                 <div className="search-btn">
                   <i className="fas fa-search" id="searchBtn"></i>
+                </div>
+                <div className="content-search position-absolute">
+                  {/* {ProductList.map((product) => (
+                    <div>{product.name}</div>
+                  ))} */}
                 </div>
               </div>
               <div className="cart position-relative">
