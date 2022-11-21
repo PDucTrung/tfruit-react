@@ -1,7 +1,20 @@
 import React from "react";
 import "./Billing.css";
+import { ErrorMessage } from "@hookform/error-message";
+import { useForm } from "react-hook-form";
 
 const Billing = () => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    criteriaMode: "all",
+    mode: "onBlur",
+  });
+  const onSubmit = (e) => {
+    console.log(e);
+  };
   return (
     <div className="container">
       <div className="d-flex justify-content-center gap-5 flex-column justify-content-center align-items-center flex-md-row align-items-md-start">
@@ -11,7 +24,13 @@ const Billing = () => {
             <p className="fs-24 fw-500">Billing Address</p>
           </div>
           <div className="list-infomation">
-            <form action="" method="POST" className="form" id="form-4">
+            <form
+              action=""
+              method="POST"
+              className="form"
+              id="form-4"
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <div className="name-customer d-flex gap-3">
                 {/* fist name */}
                 <div className="form-group">
@@ -27,8 +46,13 @@ const Billing = () => {
                     type="text"
                     placeholder="Ex: Pham"
                     className="form-control"
+                    {...register("fullnamecheckout", { required: true })}
                   />
-                  <span className="form-message" />
+                  {errors.fullnamecheckout && (
+                    <span className="form-message text-red">
+                      This field is required
+                    </span>
+                  )}
                 </div>
                 {/* last name */}
                 <div className="form-group">
@@ -41,8 +65,13 @@ const Billing = () => {
                     type="text"
                     placeholder="Ex: Trung"
                     className="form-control"
+                    {...register("lastnamecheckout", { required: true })}
                   />
-                  <span className="form-message" />
+                  {errors.lastnamecheckout && (
+                    <span className="form-message text-red">
+                      This field is required
+                    </span>
+                  )}
                 </div>
               </div>
               {/* Email */}
@@ -56,8 +85,27 @@ const Billing = () => {
                   type="text"
                   placeholder="Ex: email@domain.com"
                   className="form-control"
+                  {...register("emailcheckout", {
+                    required: "Please enter this field!",
+                    pattern: {
+                      value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                      message: "This field must be email!",
+                    },
+                  })}
                 />
-                <span className="form-message" />
+                <ErrorMessage
+                  errors={errors}
+                  name="emailcheckout"
+                  render={({ messages }) => {
+                    return messages
+                      ? Object.entries(messages).map(([type, message]) => (
+                          <span className="form-message text-red" key={type}>
+                            {message}
+                          </span>
+                        ))
+                      : null;
+                  }}
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="city" className="form-label">
@@ -69,8 +117,13 @@ const Billing = () => {
                   type="text"
                   placeholder="Ex: Ha Noi"
                   className="form-control"
+                  {...register("city", { required: true })}
                 />
-                <span className="form-message" />
+                {errors.city && (
+                  <span className="form-message text-red">
+                    This field is required
+                  </span>
+                )}
               </div>
               <div className="form-group">
                 <label htmlFor="district" className="form-label">
@@ -82,8 +135,13 @@ const Billing = () => {
                   type="text"
                   placeholder="Ex: Hoai Duc"
                   className="form-control"
+                  {...register("district", { required: true })}
                 />
-                <span className="form-message" />
+                {errors.district && (
+                  <span className="form-message text-red">
+                    This field is required
+                  </span>
+                )}
               </div>
               <div className="form-group">
                 <label htmlFor="address" className="form-label">
@@ -95,8 +153,13 @@ const Billing = () => {
                   type="text"
                   placeholder="Address"
                   className="form-control"
+                  {...register("address", { required: true })}
                 />
-                <span className="form-message" />
+                {errors.address && (
+                  <span className="form-message text-red">
+                    This field is required
+                  </span>
+                )}
               </div>
               <div className="form-group">
                 <label htmlFor="adress" className="form-label">
@@ -108,8 +171,27 @@ const Billing = () => {
                   type="text"
                   placeholder="EX: 0981953791"
                   className="form-control"
+                  {...register("phonenumber", {
+                    required: "Please enter this field!",
+                    pattern: {
+                      value: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
+                      message: "This field must be phone number",
+                    },
+                  })}
                 />
-                <span className="form-message" />
+                <ErrorMessage
+                  errors={errors}
+                  name="phonenumber"
+                  render={({ messages }) => {
+                    return messages
+                      ? Object.entries(messages).map(([type, message]) => (
+                          <span className="form-message text-red" key={type}>
+                            {message}
+                          </span>
+                        ))
+                      : null;
+                  }}
+                />
               </div>
             </form>
           </div>

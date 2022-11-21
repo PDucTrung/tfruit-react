@@ -96,6 +96,10 @@ header {
   color: #006400;
 }
 
+.text-red {
+  color: #ff3333;
+}
+
 .name-pr-fr a:hover {
   color: orange !important;
 }

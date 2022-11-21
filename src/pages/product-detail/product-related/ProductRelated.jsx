@@ -1,23 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useOutletContext } from "react-router-dom";
 import { Autoplay, Navigation } from "swiper";
 import { SwiperSlide, Swiper } from "swiper/react";
 import ProductCard from "../../../components/product-card/ProductCard";
 
 const ProductRelated = ({ product }) => {
-  const [ProductList, setProductList] = useState([]);
-  useEffect(() => {
-    async function getData() {
-      const res = await fetch("https://jsonsv.herokuapp.com/products");
-      const products = await res.json();
-      setProductList(products);
-    }
-    getData();
-  }, []);
-
-  const productRelated = ProductList.filter(
-    (products) => products.category === product.category
-  );
+  const { products } = useOutletContext();
 
   return (
     <div className="container">
@@ -52,11 +40,13 @@ const ProductRelated = ({ product }) => {
             },
           }}
         >
-          {productRelated.map((product) => (
-            <SwiperSlide key={product.id}>
-              <ProductCard product={product}></ProductCard>
-            </SwiperSlide>
-          ))}
+          {products
+            .filter((products) => products.category === product.category)
+            .map((product) => (
+              <SwiperSlide key={product.id}>
+                <ProductCard product={product}></ProductCard>
+              </SwiperSlide>
+            ))}
           <div className="swiper-button-next" />
           <div className="swiper-button-prev" />
         </Swiper>

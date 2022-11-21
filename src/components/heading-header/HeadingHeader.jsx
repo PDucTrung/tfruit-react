@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./HeadingHeader.css";
 import Modal from "react-bootstrap/Modal";
+import { ErrorMessage } from "@hookform/error-message";
+import { useForm } from "react-hook-form";
+import FormSignup from "./form-signup/FormSignup";
 
 const HeadingHeader = () => {
   const [showIn, setShowIn] = useState(false);
@@ -25,6 +28,16 @@ const HeadingHeader = () => {
     setShowUp(true);
     setShowIn(false);
   };
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    criteriaMode: "all",
+  });
+  const onSubmit = (e) => console.log(e);
+
   return (
     <main>
       <div className="heading-header bg-dark text-white">
@@ -66,7 +79,7 @@ const HeadingHeader = () => {
                       method="POST"
                       className="form"
                       id="form-2"
-                      onSubmit={(e) => e.preventDefault()}
+                      onSubmit={handleSubmit(onSubmit)}
                     >
                       <p className="heading font-mali">SIGN IN</p>
                       <div className="spacer" />
@@ -80,8 +93,33 @@ const HeadingHeader = () => {
                           type="text"
                           placeholder="VD: email@domain.com"
                           className="form-control"
+                          {...register("emailSignin", {
+                            required: "Please enter this field!",
+                            pattern: {
+                              value:
+                                /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                              message: "This field must be email!",
+                            },
+                          })}
                         />
-                        <span className="form-message" />
+                        <ErrorMessage
+                          errors={errors}
+                          name="emailSignin"
+                          render={({ messages }) => {
+                            return messages
+                              ? Object.entries(messages).map(
+                                  ([type, message]) => (
+                                    <span
+                                      className="form-message text-red"
+                                      key={type}
+                                    >
+                                      {message}
+                                    </span>
+                                  )
+                                )
+                              : null;
+                          }}
+                        />
                       </div>
                       <div className="form-group">
                         <label htmlFor="password" className="form-label">
@@ -93,8 +131,34 @@ const HeadingHeader = () => {
                           type="password"
                           placeholder="Enter your password"
                           className="form-control"
+                          {...register("passwordSignin", {
+                            required: "Please enter this field!",
+                            pattern: {
+                              value:
+                                /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
+                              message:
+                                "Password must consist of at least 8 letters and contain at least one uppercase letter, one lowercase letter and one number.",
+                            },
+                          })}
                         />
-                        <span className="form-message" />
+                        <ErrorMessage
+                          errors={errors}
+                          name="passwordSignin"
+                          render={({ messages }) => {
+                            return messages
+                              ? Object.entries(messages).map(
+                                  ([type, message]) => (
+                                    <span
+                                      className="form-message text-red"
+                                      key={type}
+                                    >
+                                      {message}
+                                    </span>
+                                  )
+                                )
+                              : null;
+                          }}
+                        />
                       </div>
                       <a href="#" className="link">
                         Forward your password ?
@@ -124,82 +188,7 @@ const HeadingHeader = () => {
                 <Modal show={showUp} onHide={handleCloseUp}>
                   <Modal.Header closeButton></Modal.Header>
                   <Modal.Body>
-                    <form
-                      action=""
-                      method="POST"
-                      className="form"
-                      id="form-1"
-                      onSubmit={(e) => e.preventDefault()}
-                    >
-                      <h3 className="heading font-mali">Sign up</h3>
-                      <div className="spacer" />
-                      <div className="form-group">
-                        <label
-                          htmlFor="fullname"
-                          className="form-label font-poppins"
-                        >
-                          Full name
-                        </label>
-                        <input
-                          id="fullname"
-                          name="fullname2"
-                          type="text"
-                          placeholder="VD: sunsan"
-                          className="form-control"
-                        />
-                        <span className="form-message" />
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="email" className="form-label">
-                          Email
-                        </label>
-                        <input
-                          id="email"
-                          name="email2"
-                          type="text"
-                          placeholder="VD: email@domain.com"
-                          className="form-control"
-                        />
-                        <span className="form-message" />
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="password" className="form-label">
-                          Password
-                        </label>
-                        <input
-                          id="password"
-                          name="password2"
-                          type="password"
-                          placeholder="Enter your password"
-                          className="form-control"
-                        />
-                        <span className="form-message" />
-                      </div>
-                      <div className="form-group">
-                        <label
-                          htmlFor="password_confirmation"
-                          className="form-label"
-                        >
-                          Re-enter Password
-                        </label>
-                        <input
-                          id="password_confirmation"
-                          name="password_confirmation"
-                          placeholder="Confirm password"
-                          type="password"
-                          className="form-control"
-                        />
-                        <span className="form-message" />
-                      </div>
-                      <button className="form-submit" id="sign-up">
-                        Sign up
-                      </button>
-                      <p className="text-center text-black">OR</p>
-                      <div className="loginWith d-flex justify-content-between">
-                        <i className="icon bi bi-facebook" />
-                        <i className="icon bi bi-google" />
-                      </div>
-                    </form>
+                    <FormSignup></FormSignup>
                   </Modal.Body>
                 </Modal>
               </div>

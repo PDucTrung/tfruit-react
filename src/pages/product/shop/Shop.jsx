@@ -3,7 +3,7 @@ import "./Shop.css";
 import Slider from "react-input-slider";
 import ProductCard from "../../../components/product-card/ProductCard";
 import { Pagination, Form } from "react-bootstrap";
-import { useLoaderData } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 const Shop = () => {
   //   slide range
@@ -11,7 +11,7 @@ const Shop = () => {
   const [Max, setMax] = useState({ x: 70 });
 
   //   product
-  const { products, categories } = useLoaderData();
+  const { products, categories } = useOutletContext();
   const [currentPage, setCurrentPage] = useState(0);
   const [filter, setFilter] = useState([]);
 
@@ -116,7 +116,7 @@ const Shop = () => {
               {/* product */}
               <div className="list-fruit-product d-flex justify-content-center align-items-center gap-3 flex-wrap gap-xl-4 gap-xxl-5">
                 {productsByPage.map((product) => (
-                  <ProductCard product={product} />
+                  <ProductCard key={product.id} product={product} />
                 ))}
               </div>
 
@@ -305,20 +305,6 @@ const Shop = () => {
       </div>
     </div>
   );
-};
-
-Shop.loader = async () => {
-  try {
-    const res = await fetch("https://jsonsv.herokuapp.com/products");
-    const products = await res.json();
-
-    const cateResponse = await fetch("https://jsonsv.herokuapp.com/categories");
-    const categories = await cateResponse.json();
-
-    return { products, categories };
-  } catch (err) {
-    throw new Error("Lỗi cmnr");
-  }
 };
 
 export default Shop;

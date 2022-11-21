@@ -40,7 +40,11 @@ AOS.init({
 });
 
 const routes = createRoutesFromElements(
-  <Route element={<Layout />}>
+  <Route
+    element={<Layout />}
+    loader={Layout.loader}
+    errorElement={<div>Some thing wrong :(</div>}
+  >
     <Route
       path="/"
       element={<Home />}

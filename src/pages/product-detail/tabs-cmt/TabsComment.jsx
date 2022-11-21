@@ -1,7 +1,21 @@
 import React, { useState } from "react";
 import "./TabsComment";
+import { ErrorMessage } from "@hookform/error-message";
+import { useForm } from "react-hook-form";
 
 const TabsComment = () => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    getValues,
+  } = useForm({
+    criteriaMode: "all",
+    mode: "onBlur",
+  });
+  const onSubmit = (e) => {
+    console.log(e);
+  };
   return (
     <div className="cmt-pr position-relative">
       {/* tabs */}
@@ -56,11 +70,9 @@ const TabsComment = () => {
                 </div>
                 <div className="content-add-cmt">
                   <form
-                    action=""
-                    method="POST"
                     className="form"
                     id="form-5"
-                    onSubmit={(e) => e.preventDefault()}
+                    onSubmit={handleSubmit(onSubmit)}
                   >
                     <div className="name-customer d-flex gap-3">
                       {/* full name */}
@@ -77,8 +89,13 @@ const TabsComment = () => {
                           type="text"
                           placeholder="Ex: Pham"
                           className="form-control"
+                          {...register("fullnametabscmt", { required: true })}
                         />
-                        <span className="form-message" />
+                        {errors.fullnametabscmt && (
+                          <span className="form-message text-red">
+                            This field is required
+                          </span>
+                        )}
                       </div>
                       {/* Email */}
                       <div className="form-group">
@@ -91,8 +108,33 @@ const TabsComment = () => {
                           type="text"
                           placeholder="Ex: email@domain.com"
                           className="form-control"
+                          {...register("emailtabscmt", {
+                            required: "Please enter this field!",
+                            pattern: {
+                              value:
+                                /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                              message: "This field must be email!",
+                            },
+                          })}
                         />
-                        <span className="form-message" />
+                        <ErrorMessage
+                          errors={errors}
+                          name="emailtabscmt"
+                          render={({ messages }) => {
+                            return messages
+                              ? Object.entries(messages).map(
+                                  ([type, message]) => (
+                                    <span
+                                      className="form-message text-red"
+                                      key={type}
+                                    >
+                                      {message}
+                                    </span>
+                                  )
+                                )
+                              : null;
+                          }}
+                        />
                       </div>
                     </div>
                     <div className="form-group">

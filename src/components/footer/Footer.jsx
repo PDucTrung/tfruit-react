@@ -1,7 +1,18 @@
 import React from "react";
+import { ErrorMessage } from "@hookform/error-message";
+import { useForm } from "react-hook-form";
 import "./Footer.css";
 
 const Footer = () => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    criteriaMode: "all",
+    mode: "onBlur",
+  });
+  const onSubmit = (e) => console.log(e);
   return (
     <main>
       <div className="footer text-white font-poppins bg-dark">
@@ -70,7 +81,7 @@ const Footer = () => {
                     method="POST"
                     className="form bg-dark"
                     id="form-3"
-                    onSubmit={(e) => e.preventDefault()}
+                    onSubmit={handleSubmit(onSubmit)}
                   >
                     <div className="form-group">
                       <input
@@ -79,8 +90,33 @@ const Footer = () => {
                         type="text"
                         placeholder="Enter your E-mail"
                         className="form-control text-center"
+                        {...register("emailFooter", {
+                          required: "Please enter this field!",
+                          pattern: {
+                            value:
+                              /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                            message: "This field must be email!",
+                          },
+                        })}
                       />
-                      <span className="form-message" />
+                      <ErrorMessage
+                        errors={errors}
+                        name="emailFooter"
+                        render={({ messages }) => {
+                          return messages
+                            ? Object.entries(messages).map(
+                                ([type, message]) => (
+                                  <span
+                                    className="form-message text-red"
+                                    key={type}
+                                  >
+                                    {message}
+                                  </span>
+                                )
+                              )
+                            : null;
+                        }}
+                      />
                     </div>
                     <button className="form-submit">Subscribe</button>
                   </form>

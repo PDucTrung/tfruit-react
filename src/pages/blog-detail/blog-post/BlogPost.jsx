@@ -1,7 +1,20 @@
 import React from "react";
 import "./BlogPost.css";
+import { ErrorMessage } from "@hookform/error-message";
+import { useForm } from "react-hook-form";
 
 const BlogPost = () => {
+ const {
+   register,
+   formState: { errors },
+   handleSubmit,
+ } = useForm({
+   criteriaMode: "all",
+   mode: "onBlur",
+ });
+ const onSubmit = (e) => {
+   console.log(e);
+ };
   return (
     <div className="container">
       <div className="row gap-5 gap-lg-0">
@@ -154,7 +167,7 @@ const BlogPost = () => {
                     method="POST"
                     className="form"
                     id="form-5"
-                    onSubmit={(e) => e.preventDefault()}
+                    onSubmit={handleSubmit(onSubmit)}
                   >
                     <div className="name-customer d-flex gap-3">
                       {/* full name */}
@@ -171,8 +184,13 @@ const BlogPost = () => {
                           type="text"
                           placeholder="Ex: Pham"
                           className="form-control"
+                          {...register("nameblogpost", { required: true })}
                         />
-                        <span className="form-message" />
+                        {errors.nameblogpost && (
+                          <span className="form-message text-red">
+                            This field is required
+                          </span>
+                        )}
                       </div>
                       {/* Email */}
                       <div className="form-group">
@@ -185,8 +203,33 @@ const BlogPost = () => {
                           type="text"
                           placeholder="Ex: email@domain.com"
                           className="form-control"
+                          {...register("emailblogpost", {
+                            required: "Please enter this field!",
+                            pattern: {
+                              value:
+                                /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                              message: "This field must be email!",
+                            },
+                          })}
                         />
-                        <span className="form-message" />
+                        <ErrorMessage
+                          errors={errors}
+                          name="emailblogpost"
+                          render={({ messages }) => {
+                            return messages
+                              ? Object.entries(messages).map(
+                                  ([type, message]) => (
+                                    <span
+                                      className="form-message text-red"
+                                      key={type}
+                                    >
+                                      {message}
+                                    </span>
+                                  )
+                                )
+                              : null;
+                          }}
+                        />
                       </div>
                     </div>
                     <div className="form-group">

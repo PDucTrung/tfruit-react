@@ -5,9 +5,12 @@ import "./ProductDetail.css";
 import { useLoaderData } from "react-router-dom";
 import TabsComment from "./tabs-cmt/TabsComment";
 import ProductRelated from "./product-related/ProductRelated";
+import { useOutletContext, useParams } from "react-router-dom";
 
 const ProductDetail = () => {
-  const product = useLoaderData();
+  const { products } = useOutletContext();
+  const { productId } = useParams();
+  const product = products.find((product) => product.id == productId);
   return (
     <main>
       <section className="section-page-for font-poppins position-relative">
@@ -30,21 +33,6 @@ const ProductDetail = () => {
       </section>
     </main>
   );
-};
-
-ProductDetail.loader = async ({ params }) => {
-  const { productId } = params;
-
-  try {
-    const res = await fetch(
-      "https://jsonsv.herokuapp.com/products/" + productId
-    );
-    const product = res.json();
-
-    return product;
-  } catch (err) {
-    throw new Error("Không load được dữ liệu sản phẩm");
-  }
 };
 
 export default ProductDetail;
