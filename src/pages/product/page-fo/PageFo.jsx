@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const PageFo = () => {
   return (
@@ -14,9 +15,12 @@ const PageFo = () => {
           Home
           <span className="text-orange-fo">
             /
-            <a className="text-decoration-none text-orange-fo" href="product.html">
+            <NavLink
+              className="text-decoration-none text-orange-fo"
+              to={"/product"}
+            >
               Shop
-            </a>
+            </NavLink>
           </span>
         </p>
       </div>
