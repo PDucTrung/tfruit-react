@@ -23,7 +23,7 @@ const CommentContact = () => {
           <p className="fs-24 fw-500 text-uppercase">Contact Form</p>
         </div>
         <div className="content-add-cmt">
-          <form className="form" id="form-6">
+          <form className="form" id="form-6" onSubmit={handleSubmit(onSubmit)}>
             <div className="name-customer d-flex gap-3">
               {/* full name */}
               <div className="form-group">
