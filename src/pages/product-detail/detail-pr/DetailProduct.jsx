@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useOutletContext } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const DetailProduct = ({ product }) => {
   const [Value, setValue] = useState(1);
+  const { addToCart, Cart } = useOutletContext();
   const increment = () => {
     if (Value > 1) {
       setValue(+Value - 1);
@@ -9,6 +12,19 @@ const DetailProduct = ({ product }) => {
   };
   const decrement = () => {
     setValue(+Value + 1);
+  };
+  const handleAddToCartClick = () => {
+    addToCart(product.id, Value);
+    toast.success("Add to cart successfully", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
   return (
     <div className="product-detail">
@@ -89,7 +105,11 @@ const DetailProduct = ({ product }) => {
                     </div>
                   </div>
                   <div className="add-cart-pr-detail">
-                    <div id="checkout" className="btn-add button button-2">
+                    <div
+                      id="checkout"
+                      className="btn-add button button-2"
+                      onClick={handleAddToCartClick}
+                    >
                       Add to cart
                     </div>
                   </div>

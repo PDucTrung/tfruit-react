@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import Modal from "react-bootstrap/Modal";
 
-const NavBar = () => {
+const NavBar = ({ cartLength }) => {
   const [showmenu, setShowmenu] = useState(false);
 
   // modal menu
@@ -87,7 +87,7 @@ const NavBar = () => {
                 </div>
               </div>
               <div className="cart position-relative">
-                <div className="number position-absolute">1</div>
+                <div className="number position-absolute">{cartLength}</div>
                 <NavLink to={"/cart"}>
                   <i className="i bi bi-basket hvr-grow-rotate" />
                 </NavLink>

@@ -30,6 +30,7 @@ import Checkout from "./pages/checkout/Checkout";
 import ProductDetail from "./pages/product-detail/ProductDetail";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "react-toastify/dist/ReactToastify.css";
 import Shop from "./pages/product/shop/Shop";
 
 // aos

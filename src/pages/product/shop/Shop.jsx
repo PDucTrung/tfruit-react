@@ -12,9 +12,9 @@ const Shop = () => {
 
   //   product
   const { products, categories } = useOutletContext();
+
   const [currentPage, setCurrentPage] = useState(0);
   const [filter, setFilter] = useState([]);
-
   const filterRef = useRef();
 
   // filter range

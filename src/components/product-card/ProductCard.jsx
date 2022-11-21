@@ -1,11 +1,26 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const ProductCard = ({product}) => {
+const ProductCard = ({ product }) => {
+  const { addToCart } = useOutletContext();
+  const handleAddToCartClick = () => {
+    addToCart(product.id);
+    toast.success("Add to cart successfully", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
+
   return (
-    <div
-      className="fruit-product d-flex flex-column justify-content-center align-items-center gap-3 position-relative"
-    >
+    <div className="fruit-product d-flex flex-column justify-content-center align-items-center gap-3 position-relative">
       <NavLink to={`/product-detail/${product.id}`}>
         <div className="img-thumb-pr">
           <img src={product.img} alt="sds" />
@@ -23,7 +38,11 @@ const ProductCard = ({product}) => {
         <span className="fs-16 fw-400 text-green">$ {product.price}</span>
       </div>
       <div className="add-cart position-absolute">
-        <div id="checkout" className="btn-add button button-2">
+        <div
+          id="checkout"
+          className="btn-add button button-2"
+          onClick={handleAddToCartClick}
+        >
           Add to cart
         </div>
       </div>

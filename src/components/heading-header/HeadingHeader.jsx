@@ -4,6 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
 import FormSignup from "./form-signup/FormSignup";
+import { toast } from "react-toastify";
 
 const HeadingHeader = () => {
   const [showIn, setShowIn] = useState(false);
@@ -36,7 +37,19 @@ const HeadingHeader = () => {
   } = useForm({
     criteriaMode: "all",
   });
-  const onSubmit = (e) => console.log(e);
+  const onSubmit = (e) => {
+    toast(" 🦄 wellcome tfruit! ", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+    console.log(e);
+  };
 
   return (
     <main>
