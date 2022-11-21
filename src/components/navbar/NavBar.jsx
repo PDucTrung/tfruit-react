@@ -3,6 +3,7 @@ import Navigation from "../navigation/Navigation";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import Modal from "react-bootstrap/Modal";
+import { Navbar, Offcanvas } from "react-bootstrap";
 
 const NavBar = ({ cartLength }) => {
   const [showmenu, setShowmenu] = useState(false);
@@ -53,16 +54,17 @@ const NavBar = ({ cartLength }) => {
                 onClick={handleShowMenu}
               />
               {/* The Modal */}
-              <Modal
+              <Offcanvas
                 className="modal-menu d-xl-none"
                 show={showmenu}
                 onHide={handleCloseMenu}
+                responsive={"xl"}
               >
-                <Modal.Header closeButton></Modal.Header>
-                <Modal.Body>
+                <Offcanvas.Header closeButton></Offcanvas.Header>
+                <Offcanvas.Body>
                   <Navigation></Navigation>
-                </Modal.Body>
-              </Modal>
+                </Offcanvas.Body>
+              </Offcanvas>
             </div>
           </div>
           <div className="d-none d-xl-block">
