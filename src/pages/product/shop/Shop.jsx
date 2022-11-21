@@ -29,11 +29,15 @@ const Shop = () => {
   const search = (e) => {
     console.log(
       products.filter((pr) => {
-        if (pr.name.toUpperCase().indexOf(e.target.value.toUpperCase().trim()) == -1) {
+        if (
+          pr.name.toUpperCase().indexOf(e.target.value.toUpperCase().trim()) ==
+          -1
+        ) {
           return null;
         } else
           return (
-            pr.name.toUpperCase().indexOf(e.target.value.toUpperCase().trim()) > -1
+            pr.name.toUpperCase().indexOf(e.target.value.toUpperCase().trim()) >
+            -1
           );
       })
     );
@@ -190,7 +194,7 @@ const Shop = () => {
                     styles={{
                       track: {
                         backgroundColor: "none",
-                        width: "95px",
+                        width: "120px",
                       },
                       active: {
                         backgroundColor: "orange",
@@ -216,7 +220,7 @@ const Shop = () => {
                     styles={{
                       track: {
                         backgroundColor: "none",
-                        width: "95px",
+                        width: "120px",
                       },
                       active: {
                         backgroundColor: "orange",

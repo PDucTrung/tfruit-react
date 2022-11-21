@@ -149,7 +149,13 @@ const BlogPost = () => {
                   <p className="fs-24">Add your comment</p>
                 </div>
                 <div className="content-add-cmt">
-                  <form action="" method="POST" className="form" id="form-5">
+                  <form
+                    action=""
+                    method="POST"
+                    className="form"
+                    id="form-5"
+                    onSubmit={(e) => e.preventDefault()}
+                  >
                     <div className="name-customer d-flex gap-3">
                       {/* full name */}
                       <div className="form-group">

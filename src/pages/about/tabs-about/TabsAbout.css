@@ -7,18 +7,18 @@
   padding-left: 10px;
 }
 
-.tabs-about {
+.tabs-about-ab {
   width: 100%;
   height: 400px;
 }
 
 @media screen and (min-width: 1200px) {
-  .tabs-about {
+  .tabs-about-ab {
     width: 50%;
   }
 }
 
-.section-tabs .tab-list {
+.section-tabs .tab-list-ab {
   height: 50px;
   display: flex;
   list-style: none;
@@ -27,7 +27,7 @@
   margin: 0;
 }
 
-.section-tabs .tabs {
+.section-tabs .tabs-ab {
   width: 50%;
   display: flex;
   justify-content: center;
@@ -40,16 +40,16 @@
   color: green;
 }
 
-.section-tabs .tabs:hover {
+.section-tabs .tabs-ab:hover {
   background-color: green;
   color: white;
 }
 
-.section-tabs .active-tabs {
+.section-tabs .active-tabs-ab {
   background: white;
 }
 
-.section-tabs .active-tabs::before {
+.section-tabs .active-tabs-ab::before {
   content: "";
   display: block;
   position: absolute;
@@ -61,12 +61,12 @@
   background: green;
 }
 
-.section-tabs .content {
+.section-tabs .content-ab {
   background-color: white;
   display: none;
   padding: 20px;
 }
 
-.section-tabs .active-content {
+.section-tabs .active-content-ab {
   display: flex;
 }

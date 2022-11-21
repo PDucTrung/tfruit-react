@@ -16,34 +16,39 @@ const TabsAbout = () => {
         <div className="img-thumbnail-tabs">
           <img src="./assets/img/about-1.jpg" alt="sds" />
         </div>
-        <div className="tabs-about">
+        <div className="tabs-about-ab">
           <div className="mb-3 pl-10">
             <span className="font-mali fs-40 fw-500">Our Goals</span>
           </div>
-          <div className="tabs-content">
-            <ul className="tab-list">
+          <div className="tabs-content-ab">
+            <ul className="tab-list-ab">
               <li
-                className={`tabs ${getActiveClass(1, "active-tabs")}`}
+                className={`tabs-ab ${getActiveClass(1, "active-tabs-ab")}`}
                 onClick={() => toggleTab(1)}
               >
                 Goals
               </li>
               <li
-                className={`tabs ${getActiveClass(2, "active-tabs")}`}
+                className={`tabs-ab ${getActiveClass(2, "active-tabs-ab")}`}
                 onClick={() => toggleTab(2)}
               >
                 Values
               </li>
               <li
-                className={`tabs ${getActiveClass(3, "active-tabs")}`}
+                className={`tabs-ab ${getActiveClass(3, "active-tabs-ab")}`}
                 onClick={() => toggleTab(3)}
               >
                 Mission
               </li>
             </ul>
             <div className="content-container">
-              <div className={`content ${getActiveClass(1, "active-content")}`}>
-                <div className="tab-content">
+              <div
+                className={`content-ab ${getActiveClass(
+                  1,
+                  "active-content-ab"
+                )}`}
+              >
+                <div className="tab-content-ab">
                   <div>
                     <p className="fs-15">
                       Customer satisfaction is our top priority, there is
@@ -56,8 +61,13 @@ const TabsAbout = () => {
                   <button className="btn-submit">READ MORE</button>
                 </div>
               </div>
-              <div className={`content ${getActiveClass(2, "active-content")}`}>
-                <div className="tab-content">
+              <div
+                className={`content-ab ${getActiveClass(
+                  2,
+                  "active-content-ab"
+                )}`}
+              >
+                <div className="tab-content-ab">
                   <div>
                     <p className="fs-15">
                       Our products undergo strict quality assurance checks that
@@ -68,8 +78,13 @@ const TabsAbout = () => {
                   <button className="btn-submit">READ MORE</button>
                 </div>
               </div>
-              <div className={`content ${getActiveClass(3, "active-content")}`}>
-                <div className="tab-content">
+              <div
+                className={`content-ab ${getActiveClass(
+                  3,
+                  "active-content-ab"
+                )}`}
+              >
+                <div className="tab-content-ab">
                   <div>
                     <p className="fs-15">
                       Our mission is to bring our customers quality products, at

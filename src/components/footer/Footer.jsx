@@ -70,6 +70,7 @@ const Footer = () => {
                     method="POST"
                     className="form bg-dark"
                     id="form-3"
+                    onSubmit={(e) => e.preventDefault()}
                   >
                     <div className="form-group">
                       <input

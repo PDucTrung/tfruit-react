@@ -61,7 +61,13 @@ const HeadingHeader = () => {
                 <Modal show={showIn} onHide={handleCloseIn}>
                   <Modal.Header closeButton></Modal.Header>
                   <Modal.Body>
-                    <form action="" method="POST" className="form" id="form-2">
+                    <form
+                      action=""
+                      method="POST"
+                      className="form"
+                      id="form-2"
+                      onSubmit={(e) => e.preventDefault()}
+                    >
                       <p className="heading font-mali">SIGN IN</p>
                       <div className="spacer" />
                       <div className="form-group">
@@ -118,7 +124,13 @@ const HeadingHeader = () => {
                 <Modal show={showUp} onHide={handleCloseUp}>
                   <Modal.Header closeButton></Modal.Header>
                   <Modal.Body>
-                    <form action="" method="POST" className="form" id="form-1">
+                    <form
+                      action=""
+                      method="POST"
+                      className="form"
+                      id="form-1"
+                      onSubmit={(e) => e.preventDefault()}
+                    >
                       <h3 className="heading font-mali">Sign up</h3>
                       <div className="spacer" />
                       <div className="form-group">

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+
 import "./Sale.css";
 
 const Sale = () => {
@@ -79,9 +81,9 @@ const Sale = () => {
         </div>
         <div>
           <div className="button button-2 but-sale">
-            <a className="text-decoration-none" href="product.html">
+            <NavLink className="text-decoration-none" to={"/product"}>
               <i className="bi bi-arrow-right-circle" /> &nbsp; Shop collection
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>

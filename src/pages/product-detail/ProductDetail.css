@@ -32,10 +32,10 @@
 .tabs::after {
   clear: both;
 }
-.tab {
+.cmt-pr .tab {
   float: left;
 }
-.tab-switch {
+.cmt-pr .tab-switch {
   display: none;
 }
 

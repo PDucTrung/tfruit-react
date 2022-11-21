@@ -2,6 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./SliderHome.css";
 import { Autoplay, Navigation, Pagination } from "swiper";
+import { NavLink } from "react-router-dom";
 
 const SliderHome = () => {
   return (
@@ -36,9 +37,12 @@ const SliderHome = () => {
                 quality organic fruits, vegetables, and other products.
               </h5>
               <div className="btn-slider font-poppins">
-                <a className="button button-2 text-decoration-none" href="#">
+                <NavLink
+                  className="button button-2 text-decoration-none"
+                  to={"/product"}
+                >
                   Read more
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -53,9 +57,12 @@ const SliderHome = () => {
                 organic products to our customers throughout the state.
               </h5>
               <div className="btn-slider font-poppins">
-                <a className="button button-2 text-decoration-none" href="#">
+                <NavLink
+                  className="button button-2 text-decoration-none"
+                  to={"/product"}
+                >
                   Read more
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -70,9 +77,12 @@ const SliderHome = () => {
                 of growing and selling healthy food without any additives.
               </h5>
               <div className="btn-slider font-poppins">
-                <a className="button button-2 text-decoration-none" href="#">
+                <NavLink
+                  className="button button-2 text-decoration-none"
+                  to={"/product"}
+                >
                   Read more
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
