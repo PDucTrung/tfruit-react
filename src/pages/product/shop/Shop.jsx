@@ -1,14 +1,12 @@
 import React, { useRef, useState } from "react";
 import "./Shop.css";
-import Slider from "react-input-slider";
 import ProductCard from "../../../components/product-card/ProductCard";
 import { Pagination, Form } from "react-bootstrap";
 import { useOutletContext } from "react-router-dom";
+import MultiRangeSlider from "./MultiRangeSlider/MultiRangeSlider";
 
 const Shop = () => {
   //   slide range
-  const [Min, setMin] = useState({ x: 30 });
-  const [Max, setMax] = useState({ x: 70 });
 
   //   product
   const { products, categories } = useOutletContext();
@@ -16,13 +14,6 @@ const Shop = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [filter, setFilter] = useState([]);
   const filterRef = useRef();
-
-  // filter range
-  const filterRange = () => {
-    console.log(
-      products.filter((pr) => pr.price >= Min.x && pr.price <= Max.x)
-    );
-  };
 
   // search pr
 
@@ -62,6 +53,8 @@ const Shop = () => {
       return productCopy;
     }
   };
+
+  // fiiler
 
   const filteredProducts = products.filter((product) => {
     if (filter.length === 0) return true;
@@ -181,86 +174,12 @@ const Shop = () => {
               </p>
               <br />
               {/* slider range */}
-              <div classname="range-slider d-flex flex-column justify-content-center align-items-center">
-                <div className="position-relative">
-                  {/* <span>Min: </span> */}
-                  <Slider
-                    className="slider-range-min"
-                    axis="x"
-                    x={Min.x}
-                    xmin={0}
-                    xmax={50}
-                    onChange={({ x }) => setMin((Min) => ({ ...Min, x }))}
-                    styles={{
-                      track: {
-                        backgroundColor: "none",
-                        width: "120px",
-                      },
-                      active: {
-                        backgroundColor: "orange",
-                      },
-                      thumb: {
-                        width: 20,
-                        height: 20,
-                      },
-                      disabled: {
-                        opacity: 0.5,
-                      },
-                    }}
-                  />
-                  {/* <span>Max: </span> */}
-                  <Slider
-                    className="slider-range-max"
-                    axis="x"
-                    x={Max.x}
-                    xreverse={true}
-                    xmin={100}
-                    xmax={50}
-                    onChange={({ x }) => setMax((Max) => ({ ...Max, x }))}
-                    styles={{
-                      track: {
-                        backgroundColor: "none",
-                        width: "120px",
-                      },
-                      active: {
-                        backgroundColor: "orange",
-                      },
-                      thumb: {
-                        width: 20,
-                        height: 20,
-                      },
-                      disabled: {
-                        opacity: 0.5,
-                      },
-                    }}
-                  />
-                  <div className="line-range"></div>
-                </div>
-                <br />
-                <br />
-                <div className="d-flex justify-content-center gap-5">
-                  <div className="button button-2" onClick={filterRange}>
-                    FIlter
-                  </div>
-                  <div className="d-flex align-items-center">
-                    <span className="text-orange-fo">$</span>
-                    <input
-                      className="range-number"
-                      type="number"
-                      value={Min.x}
-                      readOnly
-                    />
-                    <span>-&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span className="text-orange-fo">$</span>
-                    <input
-                      className="range-number"
-                      type="number"
-                      value={Max.x}
-                      readOnly
-                    />
-                  </div>
-                </div>
-              </div>
+              <MultiRangeSlider
+                min={0}
+                max={100}
+                onChange={({ min, max }) => console.log(min + " - " + max)}
+                products={products}
+              />
             </div>
             {/* popular product */}
             <div className="spacer" />

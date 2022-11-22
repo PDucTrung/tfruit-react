@@ -8,7 +8,6 @@ const CommentContact = () => {
     register,
     formState: { errors },
     handleSubmit,
-    getValues,
   } = useForm({
     criteriaMode: "all",
     mode: "onBlur",

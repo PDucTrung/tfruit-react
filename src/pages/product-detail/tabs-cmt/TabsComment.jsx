@@ -8,7 +8,6 @@ const TabsComment = () => {
     register,
     formState: { errors },
     handleSubmit,
-    getValues,
   } = useForm({
     criteriaMode: "all",
     mode: "onBlur",

@@ -13,10 +13,12 @@
     "@emotion/styled": "^11.10.5",
     "@hookform/error-message": "^2.0.1",
     "@mui/material": "^5.10.14",
+    "@mui/styled-engine-sc": "^5.10.14",
     "aos": "^2.3.4",
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.10.2",
     "hover.css": "^2.3.2",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-countup": "^6.3.2",
@@ -31,6 +33,7 @@
     "react-toastify": "^9.1.1",
     "react-toastr": "^3.0.0",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.6",
     "swiper": "^8.4.4"
   },
   "devDependencies": {
