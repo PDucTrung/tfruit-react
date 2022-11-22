@@ -53,13 +53,14 @@ const CartProduct = () => {
                     <div className="img-thumbail-cart">
                       <img src={item.product.img} alt="ss" />
                     </div>
-                    <div className="name-pr-cart">
-                      <div
-                        className="text-decoration-none text-black hvr-underline-from-center"
-                      >
+                    <NavLink
+                      className="name-pr-cart"
+                      to={`/product-detail/${item.productId}`}
+                    >
+                      <div className="text-decoration-none text-black hvr-underline-from-center">
                         {item.product.name}
                       </div>
-                    </div>
+                    </NavLink>
                   </div>
                   <div className="price-cart">
                     <p>
@@ -104,7 +105,7 @@ const CartProduct = () => {
                     <i
                       className="bi bi-trash"
                       onClick={() => deleteProduct(item.product.id)}
-                    />                   
+                    />
                   </div>
                 </div>
               </div>

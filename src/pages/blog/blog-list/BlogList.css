@@ -8,16 +8,19 @@
   border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.blog-box .img-thumbnail-blog-box img {
+  transition: all 0.2s linear;
 }
 
 .blog-box:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  transition: all 0.2s linear;
 }
 
 .blog-box:hover .img-thumbnail-blog-box img {
   transform: scale(1.2);
-  transition: all 0.2s linear;
 }
 
 .img-thumbnail-blog-box {
@@ -71,7 +74,7 @@
   padding-bottom: 100px;
   align-items: flex-end;
 }
-.section-list-blog .swiper-wrapper .swiper-slide{
+.section-list-blog .swiper-wrapper .swiper-slide {
   background-color: white;
 }
 

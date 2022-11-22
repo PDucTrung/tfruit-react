@@ -50,42 +50,43 @@ const MultiRangeSlider = ({ min, max, onChange, products }) => {
 
   return (
     <div className="container">
-      <input
-        type="range"
-        min={min}
-        max={max}
-        value={minVal}
-        onChange={(event) => {
-          const value = Math.min(Number(event.target.value), maxVal - 1);
-          setMinVal(value);
-          minValRef.current = value;
-        }}
-        className="thumb thumb--left"
-        style={{ zIndex: minVal > max - 100 && "5" }}
-      />
-      <input
-        type="range"
-        min={min}
-        max={max}
-        value={maxVal}
-        onChange={(event) => {
-          const value = Math.max(Number(event.target.value), minVal + 1);
-          setMaxVal(value);
-          maxValRef.current = value;
-        }}
-        className="thumb thumb--right"
-      />
-
-      <div className="slider">
-        <div className="slider__track" />
-        <div ref={range} className="slider__range" />
-        <div className="slider__left-value">
-          <span className="text-orange-fo">$</span>
-          {minVal}
-        </div>
-        <div className="slider__right-value">
-          <span className="text-orange-fo">$</span>
-          {maxVal}
+      <div className="d-flex align-items-center justify-content-center">
+        <input
+          type="range"
+          min={min}
+          max={max}
+          value={minVal}
+          onChange={(event) => {
+            const value = Math.min(Number(event.target.value), maxVal - 1);
+            setMinVal(value);
+            minValRef.current = value;
+          }}
+          className="thumb thumb--left"
+          style={{ zIndex: minVal > max - 100 && "5" }}
+        />
+        <input
+          type="range"
+          min={min}
+          max={max}
+          value={maxVal}
+          onChange={(event) => {
+            const value = Math.max(Number(event.target.value), minVal + 1);
+            setMaxVal(value);
+            maxValRef.current = value;
+          }}
+          className="thumb thumb--right"
+        />
+        <div className="slider">
+          <div className="slider__track" />
+          <div ref={range} className="slider__range" />
+          <div className="slider__left-value">
+            <span className="text-orange-fo">$</span>
+            {minVal}
+          </div>
+          <div className="slider__right-value">
+            <span className="text-orange-fo">$</span>
+            {maxVal}
+          </div>
         </div>
       </div>
       <br />

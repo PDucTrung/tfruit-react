@@ -104,6 +104,7 @@ const Shop = () => {
               </select>
             </div>
           </div>
+          {/*  */}
           <div className="list-fruit">
             <div className="slider-fruit">
               {/* product */}
@@ -122,9 +123,9 @@ const Shop = () => {
         </div>
         {/* section filter */}
         <div className="col-12 col-lg-3 section-filter d-flex flex-column align-items-center justify-content-between">
-          <div className="filter-content d-flex justify-content-between align-items-center flex-column gap-4">
+          <div className="filter-content d-flex justify-content-between align-items-center flex-column gap-3">
             {/* search */}
-            <div className="pr-search position-relative">
+            <div className="pr-search position-relative d-none d-lg-block">
               <input
                 className="search-box-pr"
                 type="search"
@@ -177,7 +178,7 @@ const Shop = () => {
               <MultiRangeSlider
                 min={0}
                 max={100}
-                onChange={({ min, max }) => console.log(min + " - " + max)}
+                onChange={({ min, max }) => min + " - " + max}
                 products={products}
               />
             </div>

@@ -45,7 +45,7 @@
   color: #151515;
 }
 .seaction-fruit {
-  padding-bottom: 150px;
+  padding-bottom: 20px;
 }
 
 .disabled .page-link {
@@ -226,6 +226,10 @@ input.range-number {
   width: 262.938px;
   height: 10px;
   border-radius: 5px;
+}
+
+.product-popular img{
+  border-radius: 15px;
 }
 
 /* sm */

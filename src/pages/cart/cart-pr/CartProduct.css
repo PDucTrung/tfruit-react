@@ -60,10 +60,10 @@
   background-color: orange;
   color: white;
   width: 250px;
+  transition: all 0.2s linear;
 }
 
 .apply-coupon .btn-coupon:hover {
-  transition: all 0.2s linear;
   background: white;
   color: orange;
 }
@@ -76,6 +76,7 @@
   background-color: green;
   color: white !important;
   width: 250px;
+  transition: all 0.2s linear;
 }
 
 .cart-check .btn-next-to-checkout a {
@@ -88,7 +89,6 @@
 }
 
 .cart-check .btn-next-to-checkout:hover {
-  transition: all 0.2s linear;
   background: white;
   color: green;
 }
@@ -136,10 +136,11 @@
 .product-in-cart .trash i {
   font-size: 25px;
   cursor: pointer;
+  transition: all 0.1s linear;
 }
 
 .product-in-cart .trash i:hover {
-  color: orange;
+  color: red;
 }
 
 .product-in-cart .trash {
