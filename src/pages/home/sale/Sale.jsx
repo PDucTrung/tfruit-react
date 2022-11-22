@@ -55,10 +55,10 @@ const Sale = () => {
         </div>
       </div>
       <div className="content-sale text-center text-white position-absolute d-flex flex-column gap-5">
-        <p className="p-sale-1" data-aos="fade-down" data-aos-delay={100}>
+        <p className="p-sale-1">
           We offer a hot deal offer every festival
         </p>
-        <p className="p-sale-2" data-aos="fade-down" data-aos-delay={100}>
+        <p className="p-sale-2">
           Deal of the day!
         </p>
         <div className="d-flex justify-content-center gap-3">

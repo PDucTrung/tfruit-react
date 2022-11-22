@@ -11,27 +11,19 @@ const AboutHome = () => {
         </div>
         <div
           className="content-abouthome col-12 text-center col-xl-6 d-flex flex-column justify-content-center gap-3"
-          data-aos="zoom-in-down"
-          data-aos-delay={100}
         >
           <p
             className="text-content-ab-1 order-1 text-left"
-            data-aos="fade-down-left"
-            data-aos-delay={100}
           >
             A Few Words About Our Store
           </p>
           <p
             className="text-content-ab-2 order-2 text-left"
-            data-aos="fade-down-left"
-            data-aos-delay={100}
           >
             about us
           </p>
           <p
             className="text-content-ab-3 order-3 text-left"
-            data-aos="fade-down-left"
-            data-aos-delay={100}
           >
             TFruit is a family-owned grocery store that has been offering
             quality products for your everyday life since 2000, while also

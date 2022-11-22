@@ -9,8 +9,6 @@ const ListFruit = () => {
         <div className="col-12 col-xl-6 col-xxl-6 order-2">
           <div
             className="big-img-product position-relative"
-            data-aos="zoom-in-down"
-            data-aos-delay={100}
           >
             <img className="img-big" src="./assets/img/iproduct-7.png" alt="" />
             <div className="position-absolute text-big-img position-relative">
@@ -27,8 +25,6 @@ const ListFruit = () => {
           </div>
           <div
             className="d-none d-xl-block d-xxl-none"
-            data-aos="zoom-in-down"
-            data-aos-delay={100}
           >
             <img className="pr-1" src="./assets/img/pr-2.jpg" alt="" />
           </div>
@@ -37,8 +33,6 @@ const ListFruit = () => {
           <div className="list-product d-flex gap-5 flex-wrap">
             <div
               className="product border-yel position-relative"
-              data-aos="fade-down-right"
-              data-aos-delay={100}
             >
               <NavLink
                 className="text-decoration-none text-black"
@@ -71,8 +65,6 @@ const ListFruit = () => {
             </div>
             <div
               className="product border-pink-light position-relative"
-              data-aos="fade-down-left"
-              data-aos-delay={100}
             >
               <NavLink
                 className="text-decoration-none text-black"
@@ -102,8 +94,6 @@ const ListFruit = () => {
             </div>
             <div
               className="product border-green position-relative"
-              data-aos="fade-up-right"
-              data-aos-delay={100}
             >
               <NavLink
                 className="text-decoration-none text-black"
@@ -133,8 +123,6 @@ const ListFruit = () => {
             </div>
             <div
               className="product border-blur position-relative"
-              data-aos="fade-up-left"
-              data-aos-delay={100}
             >
               <NavLink
                 className="text-decoration-none text-black"

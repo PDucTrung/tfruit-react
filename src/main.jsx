@@ -7,14 +7,12 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import "aos/dist/aos.css";
 
 // library
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import AOS from "aos";
 import "hover.css/css/hover.css";
 
 // router
@@ -32,13 +30,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "react-toastify/dist/ReactToastify.css";
 import Shop from "./pages/product/shop/Shop";
-
-// aos
-AOS.init({
-  offset: 200,
-  duration: 300,
-  once: true,
-});
 
 const routes = createRoutesFromElements(
   <Route

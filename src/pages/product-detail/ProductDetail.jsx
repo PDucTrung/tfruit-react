@@ -2,7 +2,6 @@ import React from "react";
 import PageFo from "../product-detail/page-fo/PageFo";
 import DetailProduct from "./detail-pr/DetailProduct";
 import "./ProductDetail.css";
-import { useLoaderData } from "react-router-dom";
 import TabsComment from "./tabs-cmt/TabsComment";
 import ProductRelated from "./product-related/ProductRelated";
 import { useOutletContext, useParams } from "react-router-dom";
