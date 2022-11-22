@@ -7,6 +7,7 @@ import HeadingHeader from "../heading-header/HeadingHeader";
 import NavBar from "../navbar/NavBar";
 import Swal from "sweetalert2";
 import { Container } from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
 
 const Layout = () => {
   const [loading, setLoading] = useState(false);
@@ -190,11 +191,17 @@ const Layout = () => {
           </main>
         </Container>
       ) : (
-        <div className="main">
+        <Container fluid={true} className="p-0">
           <header>
+            <Navbar fixed="top" className="header d-flex flex-column">
+              <HeadingHeader></HeadingHeader>
+              <NavBar cartLength={cart.length} />
+            </Navbar>
+          </header>
+          {/* <header className="position-fixed">
             <HeadingHeader></HeadingHeader>
             <NavBar cartLength={cart.length} />
-          </header>
+          </header> */}
           <Outlet
             context={{
               products,
@@ -211,7 +218,7 @@ const Layout = () => {
           </footer>
           <BackToTop></BackToTop>
           <ToastContainer />
-        </div>
+        </Container>
       )}
     </main>
   );
