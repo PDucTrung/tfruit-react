@@ -10,7 +10,7 @@
 }
 
 .parallax-container {
-  background: url("../../../../public/assets/img/scroll-1.jpg") repeat fixed
+  background: url("../../../../assets/img/scroll-1.jpg") repeat fixed
     100%;
   background-size: cover;
   color: aliceblue;
