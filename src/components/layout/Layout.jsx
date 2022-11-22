@@ -5,6 +5,7 @@ import BackToTop from "../back-to-top/BackToTop";
 import Footer from "../footer/Footer";
 import HeadingHeader from "../heading-header/HeadingHeader";
 import NavBar from "../navbar/NavBar";
+import Swal from "sweetalert2";
 
 const Layout = () => {
   const { products, categories } = useLoaderData();
@@ -27,10 +28,21 @@ const Layout = () => {
   };
 
   const deleteProduct = (productId) => {
-    if (confirm("Are you sure you want to delete this product?")) {
-      const newCart = cart.filter((pr) => pr.productId !== productId);
-      setCart(newCart);
-    }
+    Swal.fire({
+      title: "Do you want to delete ?",
+      showDenyButton: true,
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("OK!", "", "success");
+        const newCart = cart.filter((pr) => pr.productId !== productId);
+        setCart(newCart);
+      }
+    });
+    // if (confirm("Are you sure you want to delete this product?")) {
+    //   const newCart = cart.filter((pr) => pr.productId !== productId);
+    //   setCart(newCart);
+    // }
   };
 
   const increment = (productId) => {

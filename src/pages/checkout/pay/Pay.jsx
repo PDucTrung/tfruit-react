@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Pay = (e) => {
+const Pay = ({ totalPrice, onSubmit, handleSubmit }) => {
   const [Show, setShow] = useState(Boolean);
   const [Show2, setShow2] = useState(Boolean);
   const [Show3, setShow3] = useState(Boolean);
@@ -261,7 +261,7 @@ const Pay = (e) => {
               <p>CART SUBTOTAL</p>
             </div>
             <div>
-              $<span className="sum-checkout" />
+              $<span className="sum-checkout">{totalPrice.toFixed(2)}</span>
             </div>
           </div>
           <div className="shipping d-flex justify-content-between">
@@ -278,12 +278,14 @@ const Pay = (e) => {
             </div>
             <div>
               <p>
-                $<span className="sum-checkout" />
+                $<span className="sum-checkout">{totalPrice.toFixed(2)}</span>
               </p>
             </div>
           </div>
           <div className="button-checkout">
-            <button className="btn-checkout">PROCEED TO CHECKOUT</button>
+            <button className="btn-checkout" onClick={handleSubmit(onSubmit)}>
+              PROCEED TO CHECKOUT
+            </button>
           </div>
         </div>
       </div>

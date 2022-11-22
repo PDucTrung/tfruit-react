@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
-const FormSignup = () => {
+const FormSignup = ({ handleCloseUp }) => {
   const {
     register,
     formState: { errors },
@@ -13,16 +13,8 @@ const FormSignup = () => {
     mode: "onBlur",
   });
   const onSubmit = (e) => {
-    toast.success("SignUp successfully", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
+    handleCloseUp();
+    Swal.fire("Sign Up success!", "", "success");
     console.log(e);
   };
   return (

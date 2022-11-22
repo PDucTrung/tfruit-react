@@ -3,18 +3,25 @@ import "./Billing.css";
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
 
-const Billing = () => {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm({
-    criteriaMode: "all",
-    mode: "onBlur",
-  });
-  const onSubmit = (e) => {
-    console.log(e);
-  };
+const Billing = ({
+  totalPrice,
+  shoppingCart,
+  onSubmit,
+  handleSubmit,
+  register,
+  errors,
+}) => {
+  // const {
+  //   register,
+  //   formState: { errors },
+  //   handleSubmit,
+  // } = useForm({
+  //   criteriaMode: "all",
+  //   mode: "onBlur",
+  // });
+  // const onSubmit = (e) => {
+  //   console.log(e);
+  // };
   return (
     <div className="container">
       <div className="d-flex justify-content-center gap-5 flex-column justify-content-center align-items-center flex-md-row align-items-md-start">
@@ -205,23 +212,25 @@ const Billing = () => {
             </div>
             {/*  */}
             <div className="checkout-item d-flex flex-column gap-3">
-              <div id="checkout-item">
-                <div className="product-in-cart d-flex align-items-center justify-content-between gap-4">
-                  <div className="pr-cart d-flex justify-content-between align-items-center gap-3">
-                    <div className="img-thumbail-cart">
-                      <img src="./assets/img/pr-fr-3.png" alt="ss" />
+              {shoppingCart.map((item) => (
+                <div id="checkout-item">
+                  <div className="product-in-cart d-flex align-items-center justify-content-between gap-4">
+                    <div className="pr-cart d-flex justify-content-between align-items-center gap-3">
+                      <div className="img-thumbail-cart">
+                        <img src={item.product.img} alt="ss" />
+                      </div>
+                      <div className="name-pr-cart">
+                        <p>{item.product.name}</p>
+                      </div>
                     </div>
-                    <div className="name-pr-cart">
-                      <p>Cherry</p>
+                    <div className="total-cart">
+                      <p className="font-mali fz-24 fw-600">
+                        X <span id="total">{item.quantity}</span>
+                      </p>
                     </div>
-                  </div>
-                  <div className="total-cart">
-                    <p className="font-mali fz-24 fw-600">
-                      X <span id="total">1</span>
-                    </p>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
             {/*  */}
             <div className="product-in-cart d-flex align-items-center justify-content-between">
@@ -234,7 +243,7 @@ const Billing = () => {
                 <p className="font-mali fs-16 fw-600">
                   ${" "}
                   <span id="total-sum" className="sum-checkout">
-                    7.25
+                    {totalPrice.toFixed(2)}
                   </span>
                 </p>
               </div>

@@ -14,7 +14,12 @@ const CartProduct = () => {
         <div className="no-product text-center font-mali fw-500">
           There are no products in cart
         </div>
-        <NavLink className="btn-no-pr button button-2 text-decoration-none" to={'/product'}>Go Shopping</NavLink>
+        <NavLink
+          className="btn-no-pr button button-2 text-decoration-none"
+          to={"/product"}
+        >
+          Go Shopping
+        </NavLink>
       </Container>
     );
   }
@@ -49,12 +54,11 @@ const CartProduct = () => {
                       <img src={item.product.img} alt="ss" />
                     </div>
                     <div className="name-pr-cart">
-                      <a
+                      <div
                         className="text-decoration-none text-black hvr-underline-from-center"
-                        // href="productdetail.html?id=${ product.id }"
                       >
                         {item.product.name}
-                      </a>
+                      </div>
                     </div>
                   </div>
                   <div className="price-cart">
@@ -100,7 +104,7 @@ const CartProduct = () => {
                     <i
                       className="bi bi-trash"
                       onClick={() => deleteProduct(item.product.id)}
-                    />
+                    />                   
                   </div>
                 </div>
               </div>

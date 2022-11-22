@@ -38,6 +38,8 @@ const HeadingHeader = () => {
     criteriaMode: "all",
   });
   const onSubmit = (e) => {
+    console.log(e);
+    handleCloseIn();
     toast(" 🦄 wellcome tfruit! ", {
       position: "top-right",
       autoClose: 5000,
@@ -48,7 +50,6 @@ const HeadingHeader = () => {
       progress: undefined,
       theme: "light",
     });
-    console.log(e);
   };
 
   return (
@@ -201,7 +202,7 @@ const HeadingHeader = () => {
                 <Modal show={showUp} onHide={handleCloseUp}>
                   <Modal.Header closeButton></Modal.Header>
                   <Modal.Body>
-                    <FormSignup></FormSignup>
+                    <FormSignup handleCloseUp={handleCloseUp}></FormSignup>
                   </Modal.Body>
                 </Modal>
               </div>
