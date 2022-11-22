@@ -79,8 +79,14 @@ const MultiRangeSlider = ({ min, max, onChange, products }) => {
       <div className="slider">
         <div className="slider__track" />
         <div ref={range} className="slider__range" />
-        <div className="slider__left-value">${minVal}</div>
-        <div className="slider__right-value">${maxVal}</div>
+        <div className="slider__left-value">
+          <span className="text-orange-fo">$</span>
+          {minVal}
+        </div>
+        <div className="slider__right-value">
+          <span className="text-orange-fo">$</span>
+          {maxVal}
+        </div>
       </div>
       <br />
       <br />

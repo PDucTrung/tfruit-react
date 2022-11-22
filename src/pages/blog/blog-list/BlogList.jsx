@@ -1,6 +1,6 @@
 import React from "react";
 import "./BlogList.css";
-import { Autoplay, Pagination } from "swiper";
+import { EffectFade, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { NavLink } from "react-router-dom";
 
@@ -10,17 +10,17 @@ const BlogList = () => {
       <Swiper
         className="slider-list-blog"
         loop={true}
-        autoplay={{
-          delay: 7000,
-          disableOnInteraction: false,
-        }}
         slidesPerView={1}
         slidesPerGroup={1}
-        modules={[Autoplay, Pagination]}
+        fadeEffect={true}
+        modules={[Pagination, EffectFade]}
         pagination={{
           el: ".swiper-pagination",
           type: "bullets",
           clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+          },
         }}
       >
         <SwiperSlide className="list-blog d-flex justify-content-center flex-wrap align-items-center gap-5">

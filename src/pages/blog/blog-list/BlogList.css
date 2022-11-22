@@ -67,14 +67,32 @@
 }
 
 .section-list-blog .swiper-wrapper {
-  padding-bottom: 70px;
+  padding-top: 40px;
+  padding-bottom: 100px;
+  align-items: flex-end;
+}
+
+.section-list-blog .swiper-pagination-bullets {
+  gap: 0 20px !important;
 }
 
 .section-list-blog .swiper-pagination .swiper-pagination-bullet {
-  width: 15px;
-  height: 15px;
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+  color: black;
+  font-size: 15px;
+  padding-top: 8px;
+  background-color: white;
+  border: 1px solid orange;
+}
+
+.section-list-blog .swiper-pagination .swiper-pagination-bullet:hover {
+  background-color: green;
+  color: white;
 }
 
 .section-list-blog .swiper-pagination .swiper-pagination-bullet-active {
   background-color: orange;
+  color: white;
 }
