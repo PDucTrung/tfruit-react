@@ -1,6 +1,6 @@
 import React from "react";
 import "./BlogList.css";
-import { EffectFade, Pagination } from "swiper";
+import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { NavLink } from "react-router-dom";
 
@@ -10,10 +10,10 @@ const BlogList = () => {
       <Swiper
         className="slider-list-blog"
         loop={true}
+        speed={1000}
         slidesPerView={1}
         slidesPerGroup={1}
-        fadeEffect={true}
-        modules={[Pagination, EffectFade]}
+        modules={[Pagination]}
         pagination={{
           el: ".swiper-pagination",
           type: "bullets",

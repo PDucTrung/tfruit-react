@@ -71,9 +71,8 @@
   padding-bottom: 100px;
   align-items: flex-end;
 }
-
-.section-list-blog .swiper-pagination-bullets {
-  gap: 0 20px !important;
+.section-list-blog .swiper-wrapper .swiper-slide{
+  background-color: white;
 }
 
 .section-list-blog .swiper-pagination .swiper-pagination-bullet {
