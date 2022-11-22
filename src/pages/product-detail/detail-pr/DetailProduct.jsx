@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { toast } from "react-toastify";
+import "./DetailProduct.css";
 
-const DetailProduct = ({ product }) => {
+const DetailProduct = ({ product, randomImg }) => {
   const [Value, setValue] = useState(1);
+  const [img, setImg] = useState(product.img);
+  const changeImg = (e) => {
+    setImg(e.target.src);
+  };
   const { addToCart, Cart } = useOutletContext();
   const increment = () => {
     if (Value > 1) {
@@ -35,12 +40,24 @@ const DetailProduct = ({ product }) => {
             <div className="img-pr-detail">
               <div className="d-flex flex-column gap-3 align-items-center justify-content-center">
                 <div className="img-pr-top">
-                  <img src={product.img} alt="dsd" />
+                  <img src={img} alt="dsd" />
                 </div>
                 <div className="img-pr-bottom d-flex gap-3 align-items-center justify-content-center">
-                  <img src={product.img} alt="dsd" />
-                  <img src="../assets/img/pr-detail-2.png" alt="dsd" />
-                  <img src="../assets/img/pr-detail-3.png" alt="dsd" />
+                  <img
+                    src={product.img}
+                    alt="dsd"
+                    onClick={(e) => changeImg(e)}
+                  />
+                  <img
+                    src={"../assets/img/pr-fr-" + randomImg + ".png"}
+                    alt="dsd"
+                    onClick={(e) => changeImg(e)}
+                  />
+                  <img
+                    src={"../assets/img/pr-fr-" + (randomImg - 1) + ".png"}
+                    alt="dsd"
+                    onClick={(e) => changeImg(e)}
+                  />
                 </div>
               </div>
             </div>

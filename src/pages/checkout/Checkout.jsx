@@ -4,7 +4,7 @@ import Billing from "./billing/Billing";
 import Pay from "./pay/Pay";
 import { useOutletContext } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const Checkout = () => {
   const { products, cart } = useOutletContext();
@@ -26,16 +26,7 @@ const Checkout = () => {
   });
   const onSubmit = (e) => {
     console.log(e);
-    toast.success("Order Success", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
+    Swal.fire("Payment success!", "", "success");
   };
   return (
     <main>

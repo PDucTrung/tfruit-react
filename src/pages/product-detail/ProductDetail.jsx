@@ -8,6 +8,7 @@ import ProductRelated from "./product-related/ProductRelated";
 import { useOutletContext, useParams } from "react-router-dom";
 
 const ProductDetail = () => {
+  const randomImg = Math.floor(Math.random() * 8) + 2;
   const { products } = useOutletContext();
   const { productId } = useParams();
   const product = products.find((product) => product.id == productId);
@@ -19,7 +20,7 @@ const ProductDetail = () => {
 
       {/* product detail  */}
       <section className="section-product-detail font-poppins">
-        <DetailProduct product={product}></DetailProduct>
+        <DetailProduct product={product} randomImg={randomImg}></DetailProduct>
       </section>
 
       {/* tabs */}
