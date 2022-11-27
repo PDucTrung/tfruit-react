@@ -4,6 +4,7 @@ import ProductCard from "../../../components/product-card/ProductCard";
 import { Pagination, Form } from "react-bootstrap";
 import { useOutletContext } from "react-router-dom";
 import MultiRangeSlider from "./MultiRangeSlider/MultiRangeSlider";
+import ScrollToTop from "../../../components/srcoll/ScrollToTop";
 
 const Shop = () => {
   //   slide range
@@ -73,6 +74,7 @@ const Shop = () => {
         active={index === currentPage}
         onClick={() => setCurrentPage(index)}
       >
+        <ScrollToTop></ScrollToTop>
         {index + 1}
       </Pagination.Item>
     ));
@@ -110,7 +112,7 @@ const Shop = () => {
               {/* product */}
               <div className="list-fruit-product d-flex justify-content-center align-items-center gap-3 flex-wrap gap-xl-4 gap-xxl-5">
                 {productsByPage.map((product) => (
-                  <ProductCard key={product.id} product={product} />
+                  <ProductCard key={product.id} product={product}></ProductCard>
                 ))}
               </div>
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import {
@@ -30,7 +30,6 @@ import ProductDetail from "./pages/product-detail/ProductDetail";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "react-toastify/dist/ReactToastify.css";
-import Shop from "./pages/product/shop/Shop";
 
 const routes = createRoutesFromElements(
   <Route
@@ -56,7 +55,7 @@ const routes = createRoutesFromElements(
     <Route
       path="/product"
       element={<Product />}
-      loader={Shop.loader}
+      // loader={Shop.loader}
       errorElement={<div>Something wrong :(</div>}
     />
     <Route
@@ -86,7 +85,7 @@ const routes = createRoutesFromElements(
     <Route
       path="/product-detail/:productId"
       element={<ProductDetail />}
-      loader={ProductDetail.loader}
+      // loader={ProductDetail.loader}
       errorElement={<div>Something wrong :(</div>}
     />
 

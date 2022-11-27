@@ -8,6 +8,7 @@ const DetailProduct = ({ product, randomImg }) => {
   const [img, setImg] = useState(product.img);
   const changeImg = (e) => {
     setImg(e.target.src);
+    document.querySelector(".img-pr-top img").src = img;
   };
   const { addToCart, Cart } = useOutletContext();
   const increment = () => {
@@ -40,7 +41,7 @@ const DetailProduct = ({ product, randomImg }) => {
             <div className="img-pr-detail">
               <div className="d-flex flex-column gap-3 align-items-center justify-content-center">
                 <div className="img-pr-top">
-                  <img src={img} alt="dsd" />
+                  <img src={product.img} alt="dsd" />
                 </div>
                 <div className="img-pr-bottom d-flex gap-3 align-items-center justify-content-center">
                   <img
