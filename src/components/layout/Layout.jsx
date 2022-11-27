@@ -8,6 +8,7 @@ import NavBar from "../navbar/NavBar";
 import Swal from "sweetalert2";
 import { Container } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
+import ScrollToTop from "../srcoll/ScrollToTop";
 
 const Layout = () => {
   const [loading, setLoading] = useState(false);
@@ -192,6 +193,7 @@ const Layout = () => {
         </Container>
       ) : (
         <Container fluid={true} className="p-0">
+          <ScrollToTop></ScrollToTop>
           <header>
             <Navbar fixed="top" className="header d-flex flex-column">
               <HeadingHeader></HeadingHeader>
