@@ -6,73 +6,26 @@ import Footer from "../footer/Footer";
 import HeadingHeader from "../heading-header/HeadingHeader";
 import NavBar from "../navbar/NavBar";
 import Swal from "sweetalert2";
+import LoadAnimation from "../load/LoadAnimation";
 import { Container } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import ScrollToTop from "../srcoll/ScrollToTop";
+import { useDispatch, useSelector } from "react-redux";
+
+import { loadCategories } from "../../store/features/categories/categories.slice";
+import {
+  loadProduct,
+  selectProductStatus,
+} from "../../store/features/products/products.slice";
 
 const Layout = () => {
-  const { products, categories } = useLoaderData();
-  const [cart, setCart] = useState([]);
+  const dispatch = useDispatch();
+  const loading = useSelector(selectProductStatus);
 
-  const addToCart = (productId, quantity = 1) => {
-    const itemIndex = cart.findIndex((item) => item.productId === productId);
-
-    if (itemIndex !== -1) {
-      const newItem = { ...cart[itemIndex] };
-      newItem.quantity += quantity;
-
-      const newCart = [...cart];
-      newCart[itemIndex] = newItem;
-
-      setCart(newCart);
-    } else {
-      setCart([...cart, { productId, quantity }]);
-    }
-  };
-
-  const deleteProduct = (productId) => {
-    Swal.fire({
-      title: "Do you want to delete ?",
-      showDenyButton: true,
-      confirmButtonText: "Yes",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire("OK!", "", "success");
-        const newCart = cart.filter((pr) => pr.productId !== productId);
-        setCart(newCart);
-      }
-    });
-  };
-
-  const increment = (productId) => {
-    const index = cart.findIndex((item) => item.productId === productId);
-
-    if (index !== -1) {
-      const newCart = [...cart];
-
-      const newItem = { ...newCart[index] };
-      newItem.quantity += 1;
-
-      newCart[index] = newItem;
-
-      setCart(newCart);
-    }
-  };
-
-  const decrement = (productId) => {
-    const index = cart.findIndex((item) => item.productId === productId);
-
-    if (index !== -1 && cart[index].quantity > 1) {
-      const newCart = [...cart];
-
-      const newItem = { ...newCart[index] };
-      newItem.quantity -= 1;
-
-      newCart[index] = newItem;
-
-      setCart(newCart);
-    }
-  };
+  useEffect(() => {
+    dispatch(loadProduct({ productId: 1 }));
+    dispatch(loadCategories());
+  }, []);
 
   return (
     <Container fluid={true} className="p-0">
@@ -80,21 +33,11 @@ const Layout = () => {
       <header>
         <Navbar fixed="top" className="header d-flex flex-column">
           <HeadingHeader></HeadingHeader>
-          <NavBar cartLength={cart.length} />
+          <NavBar />
         </Navbar>
       </header>
 
-      <Outlet
-        context={{
-          products,
-          categories,
-          cart,
-          addToCart,
-          increment,
-          decrement,
-          deleteProduct,
-        }}
-      ></Outlet>
+      {loading ? <LoadAnimation></LoadAnimation> : <Outlet></Outlet>}
 
       <footer>
         <Footer></Footer>
@@ -105,18 +48,18 @@ const Layout = () => {
   );
 };
 
-Layout.loader = async () => {
-  try {
-    const res = await fetch("https://jsonsv.herokuapp.com/products");
-    const products = await res.json();
+// Layout.loader = async () => {
+//   try {
+//     const res = await fetch("https://jsonsv.herokuapp.com/products");
+//     const products = await res.json();
 
-    const cateResponse = await fetch("https://jsonsv.herokuapp.com/categories");
-    const categories = await cateResponse.json();
+//     const cateResponse = await fetch("https://jsonsv.herokuapp.com/categories");
+//     const categories = await cateResponse.json();
 
-    return { products, categories };
-  } catch (err) {
-    throw new Error("Lỗi cmnr");
-  }
-};
+//     return { products, categories };
+//   } catch (err) {
+//     throw new Error("Lỗi cmnr");
+//   }
+// };
 
 export default Layout;

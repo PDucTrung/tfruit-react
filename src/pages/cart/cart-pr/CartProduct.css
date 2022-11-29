@@ -161,6 +161,25 @@
   margin: 0 auto !important;
 }
 
+.clear-cart {
+  padding: 20px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.clear-cart .btn-clear {
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  border: 2px solid orange;
+}
+
+.clear-cart .btn-clear:hover {
+  background-color: white;
+  color: orange;
+}
+
 @media screen and (min-width: 400px) {
   .qty-cart .number-qty {
     padding-left: 13px;

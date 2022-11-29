@@ -2,20 +2,13 @@ import React from "react";
 import PageFo from "../checkout/page-fo/PageFo";
 import Billing from "./billing/Billing";
 import Pay from "./pay/Pay";
-import { useOutletContext } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { useSelector } from "react-redux";
+import { selectCart } from "../../store/features/cart/cart.slice";
 
 const Checkout = () => {
-  const { products, cart } = useOutletContext();
-  const shoppingCart = cart.map((item) => ({
-    ...item,
-    product: products.find((product) => product.id === item.productId),
-  }));
-  const totalPrice = shoppingCart.reduce(
-    (total, item) => (total += item.product.price * item.quantity),
-    0
-  );
+  const { items, totalPrice } = useSelector(selectCart);
   const {
     register,
     formState: { errors },
@@ -38,7 +31,7 @@ const Checkout = () => {
       <section className="section-address font-poppins">
         <Billing
           totalPrice={totalPrice}
-          shoppingCart={shoppingCart}
+          shoppingCart={items}
           handleSubmit={handleSubmit}
           onSubmit={onSubmit}
           register={register}

@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import { addItem } from "../../../store/features/cart/cart.slice";
 import "./DetailProduct.css";
 
 const DetailProduct = ({ product, randomImg }) => {
+  const dispatch = useDispatch();
   const [Value, setValue] = useState(1);
   const [img, setImg] = useState(product.img);
   const changeImg = (e) => {
     setImg(e.target.src);
     document.querySelector(".img-pr-top img").src = img;
   };
-  const { addToCart, Cart } = useOutletContext();
   const increment = () => {
     if (Value > 1) {
       setValue(+Value - 1);
@@ -19,8 +20,8 @@ const DetailProduct = ({ product, randomImg }) => {
   const decrement = () => {
     setValue(+Value + 1);
   };
-  const handleAddToCartClick = () => {
-    addToCart(product.id, Value);
+  const handleAddToCartClick = (value) => {
+    dispatch(addItem({ productId: product.id, quantity: value }));
     toast.success("Add to cart successfully", {
       position: "top-right",
       autoClose: 5000,
@@ -126,7 +127,7 @@ const DetailProduct = ({ product, randomImg }) => {
                     <div
                       id="checkout"
                       className="btn-add button button-2"
-                      onClick={handleAddToCartClick}
+                      onClick={() => handleAddToCartClick(Value)}
                     >
                       Add to cart
                     </div>

@@ -11,17 +11,6 @@ const Billing = ({
   register,
   errors,
 }) => {
-  // const {
-  //   register,
-  //   formState: { errors },
-  //   handleSubmit,
-  // } = useForm({
-  //   criteriaMode: "all",
-  //   mode: "onBlur",
-  // });
-  // const onSubmit = (e) => {
-  //   console.log(e);
-  // };
   return (
     <div className="container">
       <div className="d-flex justify-content-center gap-5 flex-column justify-content-center align-items-center flex-md-row align-items-md-start">

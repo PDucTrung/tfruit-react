@@ -5,12 +5,13 @@ import "./ProductDetail.css";
 import TabsComment from "./tabs-cmt/TabsComment";
 import ProductRelated from "./product-related/ProductRelated";
 import { useOutletContext, useParams } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
+import { selectProductById } from "../../store/features/products/products.slice";
 const ProductDetail = () => {
   const randomImg = Math.floor(Math.random() * 8) + 2;
-  const { products } = useOutletContext();
   const { productId } = useParams();
-  const product = products.find((product) => product.id == productId);
+  const product = useSelector(selectProductById(productId));
+
   return (
     <main>
       <section className="section-page-for font-poppins position-relative">

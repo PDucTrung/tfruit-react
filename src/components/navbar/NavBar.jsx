@@ -4,8 +4,11 @@ import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import Modal from "react-bootstrap/Modal";
 import { Navbar, Offcanvas } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { selectTotalCartItem } from "../../store/features/cart/cart.slice";
 
-const NavBar = ({ cartLength }) => {
+const NavBar = () => {
+  const totalItem = useSelector(selectTotalCartItem);
   const [showmenu, setShowmenu] = useState(false);
 
   // modal menu
@@ -89,7 +92,7 @@ const NavBar = ({ cartLength }) => {
                 </div>
               </div>
               <div className="cart position-relative">
-                <div className="number position-absolute">{cartLength}</div>
+                <div className="number position-absolute">{totalItem}</div>
                 <NavLink to={"/cart"}>
                   <i className="i bi bi-basket hvr-grow-rotate" />
                 </NavLink>

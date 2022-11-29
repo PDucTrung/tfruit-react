@@ -1,14 +1,43 @@
 import React, { useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import "./CartProduct.css";
-import { useOutletContext } from "react-router-dom";
 import { Container } from "react-bootstrap";
 
-const CartProduct = () => {
-  const { products, cart, increment, decrement, deleteProduct } =
-    useOutletContext();
+import { selectCart } from "../../../store/features/cart/cart.slice";
+import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
 
-  if (cart.length === 0) {
+const CartProduct = () => {
+  const { items, totalPrice, incQty, decQty, removeItem, clearItem } =
+    useSelector(selectCart);
+  const dispatch = useDispatch();
+  const handleDelete = (productId) => {
+    Swal.fire({
+      title: "Do you want to delete ?",
+      showDenyButton: true,
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("OK!", "", "success");
+        dispatch(removeItem(productId));
+      }
+    });
+  };
+
+  const handleClear = () => {
+    Swal.fire({
+      title: "Do you want to delete ?",
+      showDenyButton: true,
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("OK!", "", "success");
+        dispatch(clearItem());
+      }
+    });
+  };
+
+  if (items.length === 0) {
     return (
       <Container className="d-flex align-items-center justify-content-center flex-column gap-4">
         <div className="no-product text-center font-mali fw-500">
@@ -24,15 +53,6 @@ const CartProduct = () => {
     );
   }
 
-  const shoppingCart = cart.map((item) => ({
-    ...item,
-    product: products.find((product) => product.id === item.productId),
-  }));
-
-  const totalPrice = shoppingCart.reduce(
-    (total, item) => (total += item.product.price * item.quantity),
-    0
-  );
   return (
     <div className="container">
       <div className="cart-container">
@@ -46,7 +66,7 @@ const CartProduct = () => {
           </div>
           <div className="content-cart fs-16 fw-400 d-flex flex-column gap-3">
             {/*  */}
-            {shoppingCart.map((item) => (
+            {items.map((item) => (
               <div id="item-cart">
                 <div className="product-in-cart d-flex align-items-center justify-content-start">
                   <div className="pr-cart d-flex justify-content-between align-items-center gap-3">
@@ -72,7 +92,7 @@ const CartProduct = () => {
                   </div>
                   <div className="qty-cart">
                     <button
-                      onClick={() => decrement(item.productId)}
+                      onClick={() => dispatch(decQty(item.product.id))}
                       type="button"
                       className="btn btn-secondary btn-down"
                     >
@@ -86,7 +106,7 @@ const CartProduct = () => {
                       readOnly
                     />
                     <button
-                      onClick={() => increment(item.productId)}
+                      onClick={() => dispatch(incQty(item.product.id))}
                       type="button"
                       className="btn btn-secondary btn-up"
                     >
@@ -104,12 +124,17 @@ const CartProduct = () => {
                   <div className="trash">
                     <i
                       className="bi bi-trash"
-                      onClick={() => deleteProduct(item.product.id)}
+                      onClick={() => handleDelete(item.product.id)}
                     />
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+          <div className="clear-cart">
+            <button className="btn-clear" onClick={() => handleClear()}>
+              Clear all
+            </button>
           </div>
         </div>
       </div>

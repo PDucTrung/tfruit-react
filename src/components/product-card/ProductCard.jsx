@@ -1,12 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { useOutletContext } from "react-router-dom";
 import { toast } from "react-toastify";
+import { addItem } from "../../store/features/cart/cart.slice";
 
 const ProductCard = ({ product }) => {
-  const { addToCart } = useOutletContext();
+  const dispatch = useDispatch();
   const handleAddToCartClick = () => {
-    addToCart(product.id);
+    dispatch(addItem({ productId: product.id, quantity: 1 }));
     toast.success("Add to cart successfully", {
       position: "top-right",
       autoClose: 5000,

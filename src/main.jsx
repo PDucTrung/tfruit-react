@@ -30,62 +30,30 @@ import ProductDetail from "./pages/product-detail/ProductDetail";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "react-toastify/dist/ReactToastify.css";
+import { Provider } from "react-redux";
+import store from "./store";
 
 const routes = createRoutesFromElements(
-  <Route
-    element={<Layout />}
-    loader={Layout.loader}
-    errorElement={<div>Some thing wrong :(</div>}
-  >
-    <Route
-      path="/"
-      element={<Home />}
-      // loader={Home.loader}
-    />
-    <Route
-      path="/about"
-      element={<About />}
-      // loader={Home.loader}
-    />
-    <Route
-      path="/contact"
-      element={<Contact />}
-      // loader={Home.loader}
-    />
+  <Route element={<Layout />} errorElement={<div>Some thing wrong :(</div>}>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/contact" element={<Contact />} />
     <Route
       path="/product"
       element={<Product />}
-      // loader={Shop.loader}
       errorElement={<div>Something wrong :(</div>}
     />
-    <Route
-      path="/blog"
-      element={<Blog />}
-      // loader={Home.loader}
-    />
+    <Route path="/blog" element={<Blog />} />
 
-    <Route
-      path="/cart"
-      element={<Cart />}
-      // loader={Home.loader}
-    />
+    <Route path="/cart" element={<Cart />} />
 
-    <Route
-      path="/blog-detail"
-      element={<BlogDetail />}
-      // loader={Home.loader}
-    />
+    <Route path="/blog-detail" element={<BlogDetail />} />
 
-    <Route
-      path="/checkout"
-      element={<Checkout />}
-      // loader={Home.loader}
-    />
+    <Route path="/checkout" element={<Checkout />} />
 
     <Route
       path="/product-detail/:productId"
       element={<ProductDetail />}
-      // loader={ProductDetail.loader}
       errorElement={<div>Something wrong :(</div>}
     />
 
@@ -97,6 +65,8 @@ const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <Provider store={store}>
+      <RouterProvider router={router}></RouterProvider>
+    </Provider>
   </React.StrictMode>
 );

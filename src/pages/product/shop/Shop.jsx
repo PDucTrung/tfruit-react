@@ -5,19 +5,36 @@ import { Pagination, Form } from "react-bootstrap";
 import { useOutletContext } from "react-router-dom";
 import MultiRangeSlider from "./MultiRangeSlider/MultiRangeSlider";
 import ScrollToTop from "../../../components/srcoll/ScrollToTop";
+import { useDispatch, useSelector } from "react-redux";
+import { selectProductsList } from "../../../store/features/products/products.slice";
 
 const Shop = () => {
-  //   slide range
-
-  //   product
-  const { products, categories } = useOutletContext();
-
-  const [currentPage, setCurrentPage] = useState(0);
-  const [filter, setFilter] = useState([]);
+  const {
+    categories,
+    products,
+    currentPage,
+    totalPage,
+    pageChanged,
+    filterChanged,
+  } = useSelector(selectProductsList);
+  const dispatch = useDispatch();
   const filterRef = useRef();
 
-  // search pr
+  // pagination
+  const paginationItems = new Array(totalPage)
+    .fill(null)
+    .map((value, index) => (
+      <Pagination.Item
+        key={index}
+        active={index === currentPage}
+        onClick={() => dispatch(pageChanged(index))}
+      >
+        <ScrollToTop></ScrollToTop>
+        {index + 1}
+      </Pagination.Item>
+    ));
 
+  // search pr
   const search = (e) => {
     console.log(
       products.filter((pr) => {
@@ -55,35 +72,6 @@ const Shop = () => {
     }
   };
 
-  // fiiler
-
-  const filteredProducts = products.filter((product) => {
-    if (filter.length === 0) return true;
-    else return filter.includes(product.category);
-  });
-
-  const total = filteredProducts.length;
-  const pageSize = 9;
-  const totalPage = Math.ceil(total / pageSize);
-
-  const paginationItems = new Array(totalPage)
-    .fill(null)
-    .map((value, index) => (
-      <Pagination.Item
-        key={index}
-        active={index === currentPage}
-        onClick={() => setCurrentPage(index)}
-      >
-        <ScrollToTop></ScrollToTop>
-        {index + 1}
-      </Pagination.Item>
-    ));
-
-  const productsByPage = filteredProducts.slice(
-    currentPage * pageSize,
-    (currentPage + 1) * pageSize
-  );
-
   return (
     <div className="container">
       <div className="row">
@@ -111,7 +99,7 @@ const Shop = () => {
             <div className="slider-fruit">
               {/* product */}
               <div className="list-fruit-product d-flex justify-content-center align-items-center gap-3 flex-wrap gap-xl-4 gap-xxl-5">
-                {productsByPage.map((product) => (
+                {products.map((product) => (
                   <ProductCard key={product.id} product={product}></ProductCard>
                 ))}
               </div>
@@ -152,7 +140,7 @@ const Shop = () => {
                         if (checkbox.checked) newFilter.push(checkbox.value);
                       });
 
-                      setFilter(newFilter);
+                      dispatch(filterChanged(newFilter));
                     }}
                     ref={filterRef}
                   >

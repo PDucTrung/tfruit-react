@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { NavLink, useOutletContext } from "react-router-dom";
 import { Autoplay, Navigation } from "swiper";
 import { SwiperSlide, Swiper } from "swiper/react";
 import ProductCard from "../../../components/product-card/ProductCard";
+import { selectAllProducts } from "../../../store/features/products/products.slice";
 
 const ProductRelated = ({ product }) => {
-  const { products } = useOutletContext();
+  const products = useSelector(selectAllProducts);
 
   return (
     <div className="container">
