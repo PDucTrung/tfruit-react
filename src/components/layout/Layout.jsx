@@ -28,7 +28,7 @@ const Layout = () => {
   }, []);
 
   return (
-    <div>
+    <main>
       {loading ? (
         <LoadAnimation></LoadAnimation>
       ) : (
@@ -48,7 +48,7 @@ const Layout = () => {
           <ToastContainer />
         </Container>
       )}
-    </div>
+    </main>
   );
 };
 
