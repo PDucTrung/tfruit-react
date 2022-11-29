@@ -28,38 +28,28 @@ const Layout = () => {
   }, []);
 
   return (
-    <Container fluid={true} className="p-0">
-      <ScrollToTop></ScrollToTop>
-      <header>
-        <Navbar fixed="top" className="header d-flex flex-column">
-          <HeadingHeader></HeadingHeader>
-          <NavBar />
-        </Navbar>
-      </header>
-
-      {loading ? <LoadAnimation></LoadAnimation> : <Outlet></Outlet>}
-
-      <footer>
-        <Footer></Footer>
-      </footer>
-      <BackToTop></BackToTop>
-      <ToastContainer />
-    </Container>
+    <div>
+      {loading ? (
+        <LoadAnimation></LoadAnimation>
+      ) : (
+        <Container fluid={true} className="p-0">
+          <ScrollToTop></ScrollToTop>
+          <header>
+            <Navbar fixed="top" className="header d-flex flex-column">
+              <HeadingHeader></HeadingHeader>
+              <NavBar />
+            </Navbar>
+          </header>
+          <Outlet></Outlet>
+          <footer>
+            <Footer></Footer>
+          </footer>
+          <BackToTop></BackToTop>
+          <ToastContainer />
+        </Container>
+      )}
+    </div>
   );
 };
-
-// Layout.loader = async () => {
-//   try {
-//     const res = await fetch("https://jsonsv.herokuapp.com/products");
-//     const products = await res.json();
-
-//     const cateResponse = await fetch("https://jsonsv.herokuapp.com/categories");
-//     const categories = await cateResponse.json();
-
-//     return { products, categories };
-//   } catch (err) {
-//     throw new Error("Lỗi cmnr");
-//   }
-// };
 
 export default Layout;
