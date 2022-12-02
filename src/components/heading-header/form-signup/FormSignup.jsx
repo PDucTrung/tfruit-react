@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
@@ -8,6 +8,7 @@ const FormSignup = ({ handleCloseUp }) => {
     register,
     formState: { errors },
     handleSubmit,
+    getValues,
   } = useForm({
     criteriaMode: "all",
     mode: "onBlur",
@@ -124,6 +125,11 @@ const FormSignup = ({ handleCloseUp }) => {
               value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
               message:
                 "Password must consist of at least 8 letters and contain at least one uppercase letter, one lowercase letter and one number.",
+            },
+            validate: {
+              match: (v) =>
+                v === getValues("passSignup") ||
+                "Mật khẩu nhập lại không chính xác",
             },
           })}
         />
