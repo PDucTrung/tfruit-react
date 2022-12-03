@@ -12,7 +12,7 @@ const PAGE_SIZE = 9;
 export const loadProduct = createAsyncThunk(
   "products",
   async (args, thunkApi) => {
-    const response = await fetch("https://jsonsv.herokuapp.com/products");
+    const response = await fetch("https://tfruitapi.vercel.app/products");
     const data = await response.json();
 
     return data;
@@ -22,7 +22,7 @@ export const loadProduct = createAsyncThunk(
 export const loadProductById = createAsyncThunk(
   "products/byId",
   async (id, thunkApi) => {
-    const response = await fetch("https://jsonsv.herokuapp.com/products/" + id);
+    const response = await fetch("https://tfruitapi.vercel.app/products/" + id);
     const data = await response.json();
 
     return data;

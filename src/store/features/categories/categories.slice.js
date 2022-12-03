@@ -8,7 +8,7 @@ const initialState = {
 export const loadCategories = createAsyncThunk(
   "categories",
   async (args, thunkApi) => {
-    const response = await fetch("https://jsonsv.herokuapp.com/categories");
+    const response = await fetch("https://tfruitapi.vercel.app/categories");
     const data = await response.json();
 
     return data;
