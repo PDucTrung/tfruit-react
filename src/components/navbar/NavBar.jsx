@@ -19,7 +19,7 @@ const NavBar = () => {
   const [ProductList, setProductList] = useState([]);
   useEffect(() => {
     async function getData() {
-      const res = await fetch("https://jsonsv.herokuapp.com/products");
+      const res = await fetch("https://tfruitapi.vercel.app/products");
       const products = await res.json();
       setProductList(products);
     }
