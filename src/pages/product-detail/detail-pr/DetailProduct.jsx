@@ -5,7 +5,6 @@ import { addItem } from "../../../store/features/cart/cart.slice";
 import "./DetailProduct.css";
 
 const DetailProduct = ({ product, randomImg }) => {
-  console.log(product.image.filter((item) => item.id == "img-1"));
   const dispatch = useDispatch();
   const [Value, setValue] = useState(1);
   const [img, setImg] = useState(product.img);
