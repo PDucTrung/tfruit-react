@@ -29,6 +29,7 @@ import Checkout from "./pages/checkout/Checkout";
 import ProductDetail from "./pages/product-detail/ProductDetail";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "sweetalert2/dist/sweetalert2.min.css";
 import "react-toastify/dist/ReactToastify.css";
 import { Provider } from "react-redux";
 import store from "./store";
