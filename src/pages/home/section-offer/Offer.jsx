@@ -5,7 +5,7 @@ import "./Offer.css";
 
 const Offer = () => {
   const [countdownDate, setCountdownDate] = useState(
-    new Date("02/20/2023").getTime()
+    new Date("11/11/2023").getTime()
   );
   const [state, setState] = useState({
     days: 0,
